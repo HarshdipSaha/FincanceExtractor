@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ report.title }}</title>
+  <style>
+    @page { size: A4; margin: 16mm 13mm; }
+    body { font-family: Arial, Helvetica, sans-serif; color: #162026; font-size: 10.5px; line-height: 1.35; }
+    h1 { font-size: 24px; margin: 0 0 8px; color: #0f2f3c; }
+    h2 { font-size: 18px; margin: 22px 0 6px; color: #174253; page-break-after: avoid; }
+    h3 { font-size: 13px; margin: 14px 0 5px; color: #203942; page-break-after: avoid; }
+    p { margin: 3px 0 8px; }
+    table { width: 100%; border-collapse: collapse; margin: 6px 0 12px; page-break-inside: avoid; }
+    th { background: #e8f0ef; color: #102a31; text-align: left; }
+    th, td { border: 1px solid #b9c7c5; padding: 5px 6px; vertical-align: top; }
+    .meta { color: #58706e; font-size: 9.5px; }
+    .status { font-size: 9px; font-weight: 700; color: #263f4b; }
+    .warning { color: #8a4a00; }
+    .pagebreak { page-break-before: always; }
+  </style>
+</head>
+<body>
+  <h1>{{ report.title }}</h1>
+  <p class="meta">Generated from uploaded annual reports. Values marked as derived, proxy, or not disclosed should be reviewed before external publication.</p>
+
+  {% for firm in report.firms %}
+    <section class="{% if not loop.first %}pagebreak{% endif %}">
+      <h2>{{ firm.firm_name }}</h2>
+      <p><strong>Source PDF:</strong> {{ firm.source_pdf }} | <strong>Parser:</strong> {{ firm.parser_used }}</p>
+      <p><strong>Business model:</strong> {{ firm.business_model or "Not disclosed" }}</p>
+      <p><strong>Portfolio comparability:</strong> {{ firm.portfolio_comparability or "Not disclosed" }}</p>
+
+      <h3>1) Core ECL / Coverage Table</h3>
+      <table>
+        <tr><th>Metric</th><th>Value</th><th>Status</th><th>Confidence</th><th>Source</th><th>Note</th></tr>
+        {% for metric in [firm.core_ecl_coverage.gross_customer_receivables, firm.core_ecl_coverage.net_receivables_before_ecl, firm.core_ecl_coverage.ecl_allowance, firm.core_ecl_coverage.net_after_ecl, firm.core_ecl_coverage.derived_coverage_ratio] %}
+        <tr>
+          <td>{{ metric.label }}</td><td>{{ metric|metric }}</td><td class="status">{{ metric.disclosure_status }}</td><td>{{ metric.confidence }}</td><td>{{ metric|source }}</td><td>{{ metric.note }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% for note in firm.core_ecl_coverage.notes %}<p class="meta">{{ note }}</p>{% endfor %}
+
+      <h3>2) Staging Table</h3>
+      <table>
+        <tr><th>Stage</th><th>Gross exposure</th><th>ECL allowance</th><th>Net exposure</th><th>Coverage</th><th>Source / caveat</th></tr>
+        {% for row in firm.staging_table %}
+        <tr>
+          <td>{{ row.stage }}</td>
+          <td>{{ row.gross_exposure|metric }}</td>
+          <td>{{ row.ecl_allowance|metric }}</td>
+          <td>{{ row.net_exposure|metric }}</td>
+          <td>{{ row.coverage_ratio|metric }}</td>
+          <td>{{ row.gross_exposure|source }}; {{ row.gross_exposure.note }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="6">Not disclosed in extracted pages.</td></tr>
+        {% endfor %}
+      </table>
+
+      <h3>3) Impairment Movement Table</h3>
+      <table>
+        <tr><th>Stage</th><th>Opening</th><th>Charge / release</th><th>Charge-offs / movement</th><th>Write-offs</th><th>Closing</th></tr>
+        {% for row in firm.impairment_movement_table %}
+        <tr>
+          <td>{{ row.stage }}</td>
+          <td>{{ row.opening|metric }}</td>
+          <td>{{ row.charge_release|metric }}</td>
+          <td>{{ row.charge_offs_or_movement|metric }}</td>
+          <td>{{ row.write_offs|metric }}</td>
+          <td>{{ row.closing|metric }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="6">Not disclosed in extracted pages.</td></tr>
+        {% endfor %}
+      </table>
+
+      <h3>4) Model Design Details</h3>
+      <table>
+        <tr><th>Item</th><th>Extracted detail</th><th>Status</th><th>Confidence</th><th>Source</th></tr>
+        {% for metric in [firm.model_design_details.framework_design, firm.model_design_details.number_of_scenarios, firm.model_design_details.scenario_names, firm.model_design_details.scenario_weights, firm.model_design_details.sicr_stage2_design, firm.model_design_details.backstop_rules, firm.model_design_details.management_adjustments, firm.model_design_details.economic_uncertainty_by_stage, firm.model_design_details.climate_overlay, firm.model_design_details.model_building_blocks] %}
+        <tr><td>{{ metric.label }}</td><td>{{ metric.note or metric|metric }}</td><td class="status">{{ metric.disclosure_status }}</td><td>{{ metric.confidence }}</td><td>{{ metric|source }}</td></tr>
+        {% endfor %}
+      </table>
+
+      <h3>5) Notes</h3>
+      <table>
+        <tr><th>Subsection</th><th>Status</th><th>Confidence</th><th>Note</th></tr>
+        {% for note in firm.notes %}
+        <tr><td>{{ note.subsection }}</td><td class="status">{{ note.disclosure_status }}</td><td>{{ note.confidence }}</td><td>{{ note.note }}</td></tr>
+        {% else %}
+        <tr><td colspan="4">No extra notes provided.</td></tr>
+        {% endfor %}
+      </table>
+
+      {% if firm.extraction_warnings %}
+      <h3>Validation Warnings</h3>
+      {% for warning in firm.extraction_warnings %}<p class="warning">{{ warning }}</p>{% endfor %}
+      {% endif %}
+    </section>
+  {% endfor %}
+</body>
+</html>

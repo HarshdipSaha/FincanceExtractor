@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IFRS 9 Benchmarking Studio</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="app">
+    <nav class="nav">
+      <div class="brand">
+        <div class="brand-mark">IF</div>
+        <div>
+          <strong>IFRS 9 Studio</strong>
+          <span>Benchmarking Intelligence</span>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#upload">Upload</a>
+        <a href="#report-browser">Review</a>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark theme">
+        <span>Theme</span>
+      </button>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">IFRS 9 peer benchmarking</span>
+        <h1>Upload annual reports. Get a cited ECL benchmark pack.</h1>
+        <p>
+          Compare peer portfolios across core ECL coverage, IFRS 9 staging, impairment
+          movements, and model design disclosures. Every extracted item is returned with
+          disclosure status, confidence, and source page references.
+        </p>
+        <div class="hero-actions">
+          <a class="primary-link" href="#upload">Upload reports</a>
+          <a class="secondary-link" href="#features">What this extracts</a>
+        </div>
+      </div>
+
+      <aside class="hero-card upload-preview" aria-label="Selected PDF preview">
+        <div class="card-topline">
+          <span>Selected documents</span>
+          <strong id="hero-file-count">No PDFs selected</strong>
+        </div>
+        <div id="hero-file-preview" class="hero-file-preview">
+          <p>Your uploaded annual reports will appear here before extraction.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section id="features" class="workflow">
+      <div>
+        <span>Core table</span>
+        <strong>ECL and coverage</strong>
+        <p>Gross exposure, ECL allowance, net exposure, coverage ratio, units, source page, and caveats.</p>
+      </div>
+      <div>
+        <span>Risk table</span>
+        <strong>Staging and movements</strong>
+        <p>Stage 1, Stage 2, Stage 3, total exposures, movement rows, write-offs, and mapping notes.</p>
+      </div>
+      <div>
+        <span>Methodology</span>
+        <strong>Model design</strong>
+        <p>Scenarios, scenario weights, SICR, DPD backstops, overlays, PMAs, JAs, and climate treatment.</p>
+      </div>
+    </section>
+
+    <section id="upload" class="workspace">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Workbench</span>
+          <h2>Annual report upload</h2>
+        </div>
+        <div class="limit">Maximum 15 PDFs</div>
+      </div>
+
+      <form id="report-form" class="panel">
+        <label class="dropzone" for="files">
+          <input id="files" name="files" type="file" accept="application/pdf" multiple required>
+          <span class="drop-icon">Upload</span>
+          <span class="drop-title">Select annual reports</span>
+          <span class="drop-subtitle">File details will appear here before the benchmark run starts.</span>
+        </label>
+
+        <div id="file-list" class="file-list"></div>
+
+        <div class="controls">
+          <label>
+            Parser
+            <select name="parser">
+              <option value="auto">Auto</option>
+              <option value="pymupdf">PyMuPDF local</option>
+              <option value="llamaparse">LlamaParse when installed</option>
+            </select>
+          </label>
+          <label>
+            LLM model
+            <select name="llm_model">
+              <option value="llama-3.3-70b-versatile">Groq Llama 3.3 70B</option>
+              <option value="llama-3.1-8b-instant">Groq Llama 3.1 8B Instant</option>
+            </select>
+          </label>
+          <label>
+            Candidate pages / PDF
+            <input name="max_pages_per_pdf" type="number" min="8" max="80" value="28">
+          </label>
+        </div>
+
+        <button id="submit" class="submit" type="submit">
+          <span>Generate benchmark report</span>
+          <span class="button-arrow">Next</span>
+        </button>
+      </form>
+
+      <section id="status" class="status" hidden></section>
+      <section id="results" class="results" hidden></section>
+    </section>
+
+    <section id="report-browser" class="report-browser" hidden></section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>

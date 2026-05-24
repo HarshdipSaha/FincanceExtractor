@@ -1,0 +1,10 @@
+# Ignore temporary and sensitive files
+keys
+keys/
+uploads/
+runs/
+__pycache__/
+*.log
+.qodo/
+.venv/
+.env
