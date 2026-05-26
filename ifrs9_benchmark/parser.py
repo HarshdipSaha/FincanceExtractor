@@ -129,6 +129,7 @@ def select_candidate_pages(blocks: list[PageBlock], max_pages: int) -> list[Page
         "economic uncertainty adjustment",
         "climate risk ecl",
         "climate-related",
+        "climate overlay",
         "stage 2 decomposition",
         "significant increase in credit risk",
         "30 days past due",
@@ -136,16 +137,53 @@ def select_candidate_pages(blocks: list[PageBlock], max_pages: int) -> list[Page
         "probability of default",
         "loss given default",
         "exposure at default",
+        "ecl model",
+        "ecl framework",
+        "credit risk management",
+        "impairment of financial assets",
+        "expected credit loss model",
+        "credit risk overview",
+        "model risk",
+        "allowance for expected credit losses",
+        "key model",
+        "net write-off",
+        "credit quality",
     ]
+
+    # Step 1: ALL pages matching any priority term are guaranteed included
     for block in blocks:
         lowered = block.text.lower()
         if any(term in lowered for term in priority_terms):
             chosen[block.page] = block
-    for block in sorted(blocks, key=lambda item: item.score, reverse=True)[: max_pages // 2]:
-        for page_number in (block.page - 1, block.page, block.page + 1):
-            if 1 <= page_number <= len(blocks):
-                chosen[page_number] = blocks[page_number - 1]
-    return sorted(chosen.values(), key=lambda item: (_priority_score(item.text), item.score), reverse=True)[:max_pages]
+
+    # Step 2: Also include adjacent pages (page before/after) for every
+    #         priority page, since tables and text often span multiple pages
+    priority_pages = list(chosen.keys())
+    for page_num in priority_pages:
+        for adj in (page_num - 1, page_num + 1):
+            if 1 <= adj <= len(blocks) and adj not in chosen:
+                chosen[adj] = blocks[adj - 1]
+
+    # Step 3: Any page with a score >= 4 (has at least some relevant content)
+    for block in blocks:
+        if block.score >= 4 and block.page not in chosen:
+            chosen[block.page] = block
+
+    # Step 4: If we still have room, add the top-scored remaining pages
+    if len(chosen) < max_pages:
+        remaining = sorted(
+            [b for b in blocks if b.page not in chosen],
+            key=lambda item: item.score, reverse=True
+        )
+        for block in remaining:
+            if len(chosen) >= max_pages:
+                break
+            chosen[block.page] = block
+
+    # Return all chosen pages sorted by page number for natural reading order
+    # Do NOT truncate to max_pages if priority pages exceed it — data is more important
+    result = sorted(chosen.values(), key=lambda item: item.page)
+    return result
 
 
 def _priority_score(text: str) -> int:

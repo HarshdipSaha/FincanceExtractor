@@ -39,7 +39,7 @@ def test_pdfs():
         output_dir=out_dir,
         parser_preference="auto",
         llm_model="llama-3.3-70b-versatile",
-        max_pages_per_pdf=36,  # increased to 36 to capture model design
+        max_pages_per_pdf=80,  # full scan — grab all relevant pages
     )
     
     print("Running pipeline...")

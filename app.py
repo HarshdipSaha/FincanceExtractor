@@ -36,7 +36,7 @@ async def create_report(
     files: list[UploadFile] = File(...),
     parser: str = Form("auto"),
     llm_model: str = Form("llama-3.3-70b-versatile"),
-    max_pages_per_pdf: int = Form(36),
+    max_pages_per_pdf: int = Form(80),
 ) -> JSONResponse:
     if not files:
         raise HTTPException(status_code=400, detail="Upload at least one PDF.")
@@ -63,7 +63,7 @@ async def create_report(
             output_dir=run_dir,
             parser_preference=parser,
             llm_model=llm_model,
-            max_pages_per_pdf=max(8, min(max_pages_per_pdf, 80)),
+            max_pages_per_pdf=max(8, min(max_pages_per_pdf, 200)),
         )
         result = pipeline.run(pdf_paths)
     except Exception as exc:

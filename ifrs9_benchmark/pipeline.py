@@ -16,7 +16,7 @@ class BenchmarkPipeline:
         output_dir: Path,
         parser_preference: str = "auto",
         llm_model: str = "llama-3.3-70b-versatile",
-        max_pages_per_pdf: int = 36,
+        max_pages_per_pdf: int = 80,
     ) -> None:
         self.output_dir = output_dir
         self.parser = PdfParser(parser_preference)
