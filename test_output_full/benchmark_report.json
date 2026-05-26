@@ -1,0 +1,2616 @@
+{
+  "title": "IFRS 9 / ECL Benchmarking Report",
+  "firms": [
+    {
+      "firm_name": "Barclays Bank UK Group",
+      "business_model": "",
+      "portfolio_comparability": "",
+      "source_pdf": "Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
+      "parser_used": "pymupdf",
+      "core_ecl_coverage": {
+        "gross_customer_receivables": {
+          "label": "Gross exposure",
+          "value": 231000.0,
+          "unit": "GBP million",
+          "source": {
+            "page": 99,
+            "table_or_section": "Risk review",
+            "quote": "Gross loans and advances, including debt securities at amortised cost, increased by £4.7bn to £231.0bn"
+          },
+          "disclosure_status": "EXACT",
+          "confidence": "LOW",
+          "note": ""
+        },
+        "net_receivables_before_ecl": {
+          "label": "Net receivables before ECL",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": ""
+        },
+        "ecl_allowance": {
+          "label": "Impairment allowances",
+          "value": 1600.0,
+          "unit": "GBP million",
+          "source": {
+            "page": 99,
+            "table_or_section": "Risk review",
+            "quote": "Impairment allowances on loans and advances at amortised cost, including off-balance sheet exposures, remained broadly stable at £1.6bn"
+          },
+          "disclosure_status": "EXACT",
+          "confidence": "LOW",
+          "note": ""
+        },
+        "net_after_ecl": {
+          "label": "Net after ECL",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": ""
+        },
+        "derived_coverage_ratio": {
+          "label": "Derived coverage ratio",
+          "value": 0.69,
+          "unit": "%",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "DERIVED",
+          "confidence": "HIGH",
+          "note": "Calculated as ECL allowance / gross exposure * 100"
+        },
+        "notes": [
+          "Gross exposure includes loans and advances at amortised cost, including debt securities at amortised cost."
+        ]
+      },
+      "staging_table": [
+        {
+          "stage": "Stage 1",
+          "gross_exposure": {
+            "label": "Gross exposure",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "ecl_allowance": {
+            "label": "ECL allowance",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "net_exposure": {
+            "label": "Net exposure",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "coverage_ratio": {
+            "label": "Coverage ratio",
+            "value": null,
+            "unit": "%",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          }
+        },
+        {
+          "stage": "Stage 2",
+          "gross_exposure": {
+            "label": "Gross exposure",
+            "value": 19609.0,
+            "unit": "GBP million",
+            "source": {
+              "page": 120,
+              "table_or_section": "Stage 2 decomposition",
+              "quote": "Total Stage 2 gross exposure"
+            },
+            "disclosure_status": "EXACT",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "ecl_allowance": {
+            "label": "Impairment allowance",
+            "value": 667.0,
+            "unit": "GBP million",
+            "source": {
+              "page": 120,
+              "table_or_section": "Stage 2 decomposition",
+              "quote": "Total Stage 2 impairment allowance"
+            },
+            "disclosure_status": "EXACT",
+            "confidence": "HIGH",
+            "note": ""
+          },
+          "net_exposure": {
+            "label": "Net exposure",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "coverage_ratio": {
+            "label": "Coverage ratio",
+            "value": null,
+            "unit": "%",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          }
+        },
+        {
+          "stage": "Stage 3",
+          "gross_exposure": {
+            "label": "Gross exposure",
+            "value": 3100.0,
+            "unit": "GBP million",
+            "source": {
+              "page": 99,
+              "table_or_section": "Risk review",
+              "quote": "Stage 3 balances decreased to £3.1bn"
+            },
+            "disclosure_status": "EXACT",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "ecl_allowance": {
+            "label": "ECL allowance",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "net_exposure": {
+            "label": "Net exposure",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "coverage_ratio": {
+            "label": "Coverage ratio",
+            "value": null,
+            "unit": "%",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          }
+        }
+      ],
+      "impairment_movement_table": [
+        {
+          "stage": "Total",
+          "opening": {
+            "label": "Opening",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "charge_release": {
+            "label": "Credit impairment charges",
+            "value": 393.0,
+            "unit": "GBP million",
+            "source": {
+              "page": 99,
+              "table_or_section": "Risk review",
+              "quote": "Credit impairment charges increased modestly to £393m"
+            },
+            "disclosure_status": "EXACT",
+            "confidence": "HIGH",
+            "note": ""
+          },
+          "charge_offs_or_movement": {
+            "label": "Charge-offs / movement",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "write_offs": {
+            "label": "Write-offs",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "closing": {
+            "label": "Closing",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          }
+        }
+      ],
+      "model_design_details": {
+        "framework_design": {
+          "label": "Framework design",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The framework design is not explicitly disclosed in the report."
+        },
+        "number_of_scenarios": {
+          "label": "Number of scenarios",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The number of scenarios is not explicitly disclosed in the report."
+        },
+        "scenario_names": {
+          "label": "Scenario names",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The scenario names are not explicitly disclosed in the report, but it is mentioned that the Downside 2 (DS2) scenario is broadly aligned to Barclays' 2025 Internal Stress Test (IST25)."
+        },
+        "scenario_weights": {
+          "label": "Scenario weights",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The scenario weights are not explicitly disclosed in the report."
+        },
+        "sicr_stage2_design": {
+          "label": "SICR Stage 2 design",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The SICR Stage 2 design is not explicitly disclosed in the report."
+        },
+        "backstop_rules": {
+          "label": "Backstop rules",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The backstop rules are not explicitly disclosed in the report."
+        },
+        "management_adjustments": {
+          "label": "Management adjustments",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The management adjustments are not explicitly disclosed in the report, but it is mentioned that economic uncertainty adjustments decreased to £34m."
+        },
+        "economic_uncertainty_by_stage": {
+          "label": "Economic uncertainty by stage",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The economic uncertainty by stage is not explicitly disclosed in the report."
+        },
+        "climate_overlay": {
+          "label": "Climate overlay",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The climate overlay is not explicitly disclosed in the report, but it is mentioned that the Barclays Bank UK Group assesses climate-related physical and transition risks through scenario analysis and targeted reviews of climate-sensitive portfolios."
+        },
+        "model_building_blocks": {
+          "label": "Model building blocks",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The model building blocks are not explicitly disclosed in the report."
+        }
+      },
+      "notes": [
+        {
+          "subsection": "Risk review",
+          "disclosure_status": "EXACT",
+          "confidence": "HIGH",
+          "note": "The report provides a detailed overview of the credit risk management framework and the expected credit loss (ECL) model."
+        }
+      ],
+      "extraction_warnings": [
+        "Gross exposure: value 231000.0 was not found verbatim on cited page 99; review citation.",
+        "Impairment allowances: value 1600.0 was not found verbatim on cited page 99; review citation.",
+        "Gross exposure: value 19609.0 was not found verbatim on cited page 120; review citation.",
+        "Gross exposure: value 3100.0 was not found verbatim on cited page 99; review citation."
+      ]
+    },
+    {
+      "firm_name": "Barclays Bank UK PLC",
+      "business_model": "",
+      "portfolio_comparability": "",
+      "source_pdf": "Barclays-Bank-UK-PLC-Annual-Report-2025.pdf",
+      "parser_used": "pymupdf",
+      "core_ecl_coverage": {
+        "gross_customer_receivables": {
+          "label": "Gross exposure",
+          "value": 231000.0,
+          "unit": "GBP million",
+          "source": {
+            "page": 99,
+            "table_or_section": "Risk review",
+            "quote": "Gross exposure: Gross loans and advances, including debt securities at amortised cost, increased by £4.7bn to £231.0bn"
+          },
+          "disclosure_status": "EXACT",
+          "confidence": "LOW",
+          "note": ""
+        },
+        "net_receivables_before_ecl": {
+          "label": "Net receivables before ECL",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": ""
+        },
+        "ecl_allowance": {
+          "label": "Impairment allowances",
+          "value": 1600.0,
+          "unit": "GBP million",
+          "source": {
+            "page": 99,
+            "table_or_section": "Risk review",
+            "quote": "Impairment allowances on loans and advances at amortised cost, including off-balance sheet exposures, remained broadly stable at £1.6bn"
+          },
+          "disclosure_status": "EXACT",
+          "confidence": "LOW",
+          "note": ""
+        },
+        "net_after_ecl": {
+          "label": "Net after ECL",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": ""
+        },
+        "derived_coverage_ratio": {
+          "label": "Derived coverage ratio",
+          "value": 0.69,
+          "unit": "%",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "DERIVED",
+          "confidence": "HIGH",
+          "note": "Calculated as ECL allowance / Gross exposure * 100"
+        },
+        "notes": [
+          "The ECL allowance is based on the expected credit losses of the financial assets at amortised cost."
+        ]
+      },
+      "staging_table": [
+        {
+          "stage": "Stage 1",
+          "gross_exposure": {
+            "label": "Gross exposure",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "ecl_allowance": {
+            "label": "ECL allowance",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "net_exposure": {
+            "label": "Net exposure",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "coverage_ratio": {
+            "label": "Coverage ratio",
+            "value": null,
+            "unit": "%",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          }
+        },
+        {
+          "stage": "Stage 2",
+          "gross_exposure": {
+            "label": "Gross exposure",
+            "value": 19609.0,
+            "unit": "GBP million",
+            "source": {
+              "page": 120,
+              "table_or_section": "Stage 2 decomposition",
+              "quote": "Total Stage 2 gross exposure"
+            },
+            "disclosure_status": "EXACT",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "ecl_allowance": {
+            "label": "Impairment allowance",
+            "value": 667.0,
+            "unit": "GBP million",
+            "source": {
+              "page": 120,
+              "table_or_section": "Stage 2 decomposition",
+              "quote": "Total Stage 2 impairment allowance"
+            },
+            "disclosure_status": "EXACT",
+            "confidence": "HIGH",
+            "note": ""
+          },
+          "net_exposure": {
+            "label": "Net exposure",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "coverage_ratio": {
+            "label": "Coverage ratio",
+            "value": null,
+            "unit": "%",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          }
+        },
+        {
+          "stage": "Stage 3",
+          "gross_exposure": {
+            "label": "Gross exposure",
+            "value": 3100.0,
+            "unit": "GBP million",
+            "source": {
+              "page": 99,
+              "table_or_section": "Risk review",
+              "quote": "Stage 3 balances decreased to £3.1bn"
+            },
+            "disclosure_status": "EXACT",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "ecl_allowance": {
+            "label": "ECL allowance",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "net_exposure": {
+            "label": "Net exposure",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "coverage_ratio": {
+            "label": "Coverage ratio",
+            "value": null,
+            "unit": "%",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          }
+        }
+      ],
+      "impairment_movement_table": [],
+      "model_design_details": {
+        "framework_design": {
+          "label": "Framework design",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The framework design is not explicitly disclosed in the report."
+        },
+        "number_of_scenarios": {
+          "label": "Number of scenarios",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The number of scenarios is not explicitly disclosed in the report."
+        },
+        "scenario_names": {
+          "label": "Scenario names",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The scenario names are not explicitly disclosed in the report, but it is mentioned that the Downside 2 (DS2) scenario is broadly aligned to Barclays' 2025 Internal Stress Test (IST25)."
+        },
+        "scenario_weights": {
+          "label": "Scenario weights",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": ""
+        },
+        "sicr_stage2_design": {
+          "label": "SICR Stage 2 design",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The SICR Stage 2 design is not explicitly disclosed in the report."
+        },
+        "backstop_rules": {
+          "label": "Backstop rules",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": ""
+        },
+        "management_adjustments": {
+          "label": "Management adjustments",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The management adjustments are mentioned in the report, but the details are not explicitly disclosed."
+        },
+        "economic_uncertainty_by_stage": {
+          "label": "Economic uncertainty adjustment by stage",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": ""
+        },
+        "climate_overlay": {
+          "label": "Climate overlay",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The climate overlay is mentioned in the report as part of the DS2 scenario, but the details are not explicitly disclosed."
+        },
+        "model_building_blocks": {
+          "label": "Key model building blocks",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": ""
+        }
+      },
+      "notes": [
+        {
+          "subsection": "Risk review",
+          "disclosure_status": "EXACT",
+          "confidence": "HIGH",
+          "note": "The risk review section provides an overview of the credit risk management framework and the credit risk profile of the bank."
+        }
+      ],
+      "extraction_warnings": [
+        "Gross exposure: value 231000.0 was not found verbatim on cited page 99; review citation.",
+        "Impairment allowances: value 1600.0 was not found verbatim on cited page 99; review citation.",
+        "Gross exposure: value 19609.0 was not found verbatim on cited page 120; review citation.",
+        "Gross exposure: value 3100.0 was not found verbatim on cited page 99; review citation."
+      ]
+    },
+    {
+      "firm_name": "HSBC UK Bank plc",
+      "business_model": "",
+      "portfolio_comparability": "",
+      "source_pdf": "HSBC annual-report-and-accounts.pdf",
+      "parser_used": "pymupdf",
+      "core_ecl_coverage": {
+        "gross_customer_receivables": {
+          "label": "Gross carrying amount of loans and advances to customers",
+          "value": 220405.0,
+          "unit": "GBP million",
+          "source": {
+            "page": 28,
+            "table_or_section": "Summary of financial instruments to which the impairment requirements in IFRS 9 are applied",
+            "quote": "Loans and advances to customers at amortised cost"
+          },
+          "disclosure_status": "EXACT",
+          "confidence": "HIGH",
+          "note": ""
+        },
+        "net_receivables_before_ecl": {
+          "label": "Net receivables before ECL",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": ""
+        },
+        "ecl_allowance": {
+          "label": "Allowance for ECL",
+          "value": 1335.0,
+          "unit": "GBP million",
+          "source": {
+            "page": 28,
+            "table_or_section": "Summary of financial instruments to which the impairment requirements in IFRS 9 are applied",
+            "quote": "Allowance for ECL"
+          },
+          "disclosure_status": "EXACT",
+          "confidence": "HIGH",
+          "note": ""
+        },
+        "net_after_ecl": {
+          "label": "Net after ECL",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": ""
+        },
+        "derived_coverage_ratio": {
+          "label": "Derived coverage ratio",
+          "value": 0.006,
+          "unit": "ratio",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "DERIVED",
+          "confidence": "HIGH",
+          "note": ""
+        },
+        "notes": [
+          "The derived coverage ratio is calculated as the ECL allowance divided by the gross customer receivables."
+        ]
+      },
+      "staging_table": [
+        {
+          "stage": "Stage 1",
+          "gross_exposure": {
+            "label": "Gross exposure",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "ecl_allowance": {
+            "label": "ECL allowance",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "net_exposure": {
+            "label": "Net exposure",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "coverage_ratio": {
+            "label": "Coverage ratio",
+            "value": null,
+            "unit": "%",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          }
+        },
+        {
+          "stage": "Stage 2",
+          "gross_exposure": {
+            "label": "Gross exposure",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "ecl_allowance": {
+            "label": "ECL allowance",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "net_exposure": {
+            "label": "Net exposure",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "coverage_ratio": {
+            "label": "Coverage ratio",
+            "value": null,
+            "unit": "%",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          }
+        },
+        {
+          "stage": "Stage 3",
+          "gross_exposure": {
+            "label": "Gross exposure",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "ecl_allowance": {
+            "label": "ECL allowance",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "net_exposure": {
+            "label": "Net exposure",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "coverage_ratio": {
+            "label": "Coverage ratio",
+            "value": null,
+            "unit": "%",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          }
+        }
+      ],
+      "impairment_movement_table": [
+        {
+          "stage": "Stage 1",
+          "opening": {
+            "label": "Opening",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "charge_release": {
+            "label": "Charge / release",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "charge_offs_or_movement": {
+            "label": "Charge-offs / movement",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "write_offs": {
+            "label": "Write-offs",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "closing": {
+            "label": "Closing",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          }
+        },
+        {
+          "stage": "Stage 2",
+          "opening": {
+            "label": "Opening",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "charge_release": {
+            "label": "Charge / release",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "charge_offs_or_movement": {
+            "label": "Charge-offs / movement",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "write_offs": {
+            "label": "Write-offs",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "closing": {
+            "label": "Closing",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          }
+        },
+        {
+          "stage": "Stage 3",
+          "opening": {
+            "label": "Opening",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "charge_release": {
+            "label": "Charge / release",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "charge_offs_or_movement": {
+            "label": "Charge-offs / movement",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "write_offs": {
+            "label": "Write-offs",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "closing": {
+            "label": "Closing",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": ""
+          }
+        }
+      ],
+      "model_design_details": {
+        "framework_design": {
+          "label": "Framework design",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The framework design is not explicitly disclosed in the report."
+        },
+        "number_of_scenarios": {
+          "label": "Number of scenarios",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The number of scenarios is not explicitly disclosed in the report."
+        },
+        "scenario_names": {
+          "label": "Scenario names",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The scenario names are not explicitly disclosed in the report."
+        },
+        "scenario_weights": {
+          "label": "Scenario weights",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The scenario weights are not explicitly disclosed in the report."
+        },
+        "sicr_stage2_design": {
+          "label": "SICR stage 2 design",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": 89,
+            "table_or_section": "Notes on the financial statements",
+            "quote": "For origination CRRs up to 3.3, significant increase in credit risk is measured by comparing the average PD for the remaining term estimated at origination with the equivalent estimation at the reporting date."
+          },
+          "disclosure_status": "PROXY",
+          "confidence": "MEDIUM",
+          "note": "The SICR stage 2 design is described in the report, but the exact criteria are not explicitly disclosed."
+        },
+        "backstop_rules": {
+          "label": "Backstop rules",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The backstop rules are not explicitly disclosed in the report."
+        },
+        "management_adjustments": {
+          "label": "Management adjustments",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The management adjustments are not explicitly disclosed in the report."
+        },
+        "economic_uncertainty_by_stage": {
+          "label": "Economic uncertainty by stage",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The economic uncertainty by stage is not explicitly disclosed in the report."
+        },
+        "climate_overlay": {
+          "label": "Climate overlay",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": 90,
+            "table_or_section": "Measurement of ECL",
+            "quote": "The estimation of ECL takes into account the time value of money and considers other factors such as climate-related risks."
+          },
+          "disclosure_status": "PROXY",
+          "confidence": "MEDIUM",
+          "note": "The climate overlay is mentioned in the report, but the exact details are not explicitly disclosed."
+        },
+        "model_building_blocks": {
+          "label": "Model building blocks",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The model building blocks are not explicitly disclosed in the report."
+        }
+      },
+      "notes": [
+        {
+          "subsection": "Credit risk management",
+          "disclosure_status": "EXACT",
+          "confidence": "HIGH",
+          "note": "The report provides detailed information on credit risk management, including the measurement of ECL and the staging of financial assets."
+        }
+      ],
+      "extraction_warnings": []
+    },
+    {
+      "firm_name": "NatWest Group",
+      "business_model": "",
+      "portfolio_comparability": "",
+      "source_pdf": "natwest-annual-report.pdf",
+      "parser_used": "pymupdf",
+      "core_ecl_coverage": {
+        "gross_customer_receivables": {
+          "label": "Gross customer receivables",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "No explicit disclosure of gross customer receivables found in the provided text."
+        },
+        "net_receivables_before_ecl": {
+          "label": "Net receivables before ECL",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "No explicit disclosure of net receivables before ECL found in the provided text."
+        },
+        "ecl_allowance": {
+          "label": "ECL allowance",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "While ECL is discussed, no specific allowance value is provided in the given text."
+        },
+        "net_after_ecl": {
+          "label": "Net after ECL",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "No explicit disclosure of net after ECL found in the provided text."
+        },
+        "derived_coverage_ratio": {
+          "label": "Derived coverage ratio",
+          "value": null,
+          "unit": "%",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "Cannot calculate derived coverage ratio without ECL allowance and gross customer receivables."
+        },
+        "notes": [
+          "ECL calculation is based on expected future cash flows, typically applied at a portfolio level.",
+          "Significant increase in credit risk is assessed based on PD deterioration."
+        ]
+      },
+      "staging_table": [
+        {
+          "stage": "Stage 1",
+          "gross_exposure": {
+            "label": "Gross exposure",
+            "value": 23961.0,
+            "unit": "GBP million",
+            "source": {
+              "page": 42,
+              "table_or_section": "Risk and capital management continued",
+              "quote": "Stage 1 modelled loans (£m) 23,961"
+            },
+            "disclosure_status": "EXACT",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "ecl_allowance": {
+            "label": "ECL allowance",
+            "value": 28.0,
+            "unit": "GBP million",
+            "source": {
+              "page": 42,
+              "table_or_section": "Risk and capital management continued",
+              "quote": "Stage 1 modelled ECL (£m) 28"
+            },
+            "disclosure_status": "EXACT",
+            "confidence": "HIGH",
+            "note": ""
+          },
+          "net_exposure": {
+            "label": "Net exposure",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": "No explicit disclosure of net exposure for Stage 1 found."
+          },
+          "coverage_ratio": {
+            "label": "Coverage ratio",
+            "value": 0.12,
+            "unit": "%",
+            "source": {
+              "page": 42,
+              "table_or_section": "Risk and capital management continued",
+              "quote": "Stage 1 coverage (%) 0.12%"
+            },
+            "disclosure_status": "EXACT",
+            "confidence": "HIGH",
+            "note": ""
+          }
+        },
+        {
+          "stage": "Stage 2",
+          "gross_exposure": {
+            "label": "Gross exposure",
+            "value": 226.0,
+            "unit": "GBP million",
+            "source": {
+              "page": 42,
+              "table_or_section": "Risk and capital management continued",
+              "quote": "Stage 2 modelled loans (£m) 226"
+            },
+            "disclosure_status": "EXACT",
+            "confidence": "LOW",
+            "note": ""
+          },
+          "ecl_allowance": {
+            "label": "ECL allowance",
+            "value": 8.0,
+            "unit": "GBP million",
+            "source": {
+              "page": 42,
+              "table_or_section": "Risk and capital management continued",
+              "quote": "Stage 2 modelled ECL (£m) 8"
+            },
+            "disclosure_status": "EXACT",
+            "confidence": "HIGH",
+            "note": ""
+          },
+          "net_exposure": {
+            "label": "Net exposure",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": "No explicit disclosure of net exposure for Stage 2 found."
+          },
+          "coverage_ratio": {
+            "label": "Coverage ratio",
+            "value": 3.54,
+            "unit": "%",
+            "source": {
+              "page": 42,
+              "table_or_section": "Risk and capital management continued",
+              "quote": "Stage 2 coverage (%) 3.54%"
+            },
+            "disclosure_status": "EXACT",
+            "confidence": "HIGH",
+            "note": ""
+          }
+        }
+      ],
+      "impairment_movement_table": [
+        {
+          "stage": "Stage 1",
+          "opening": {
+            "label": "Opening",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": "No explicit disclosure of opening balance for Stage 1 found."
+          },
+          "charge_release": {
+            "label": "Charge/Release",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": "No explicit disclosure of charge/release for Stage 1 found."
+          },
+          "charge_offs_or_movement": {
+            "label": "Charge-offs/ Movement",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": "No explicit disclosure of charge-offs/movement for Stage 1 found."
+          },
+          "write_offs": {
+            "label": "Write-offs",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": "No explicit disclosure of write-offs for Stage 1 found."
+          },
+          "closing": {
+            "label": "Closing",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": "No explicit disclosure of closing balance for Stage 1 found."
+          }
+        },
+        {
+          "stage": "Stage 2",
+          "opening": {
+            "label": "Opening",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": "No explicit disclosure of opening balance for Stage 2 found."
+          },
+          "charge_release": {
+            "label": "Charge/Release",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": "No explicit disclosure of charge/release for Stage 2 found."
+          },
+          "charge_offs_or_movement": {
+            "label": "Charge-offs/ Movement",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": "No explicit disclosure of charge-offs/movement for Stage 2 found."
+          },
+          "write_offs": {
+            "label": "Write-offs",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": "No explicit disclosure of write-offs for Stage 2 found."
+          },
+          "closing": {
+            "label": "Closing",
+            "value": null,
+            "unit": "",
+            "source": {
+              "page": null,
+              "table_or_section": "",
+              "quote": ""
+            },
+            "disclosure_status": "NOT DISCLOSED",
+            "confidence": "LOW",
+            "note": "No explicit disclosure of closing balance for Stage 2 found."
+          }
+        }
+      ],
+      "model_design_details": {
+        "framework_design": {
+          "label": "Framework design",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "While IFRS 9 models and their components are discussed, the specific framework design is not detailed."
+        },
+        "number_of_scenarios": {
+          "label": "Number of scenarios",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "Multiple economic scenarios are mentioned but the exact number is not provided."
+        },
+        "scenario_names": {
+          "label": "Scenario names",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "Scenario names such as base case, upside, downside, and extreme downside are mentioned but not explicitly listed as part of the model design."
+        },
+        "scenario_weights": {
+          "label": "Scenario weights",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "No explicit disclosure of scenario weights found."
+        },
+        "sicr_stage2_design": {
+          "label": "SICR Stage 2 design",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "SICR is mentioned in the context of PD deterioration but the specific design for Stage 2 is not detailed."
+        },
+        "backstop_rules": {
+          "label": "Backstop rules",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "No explicit mention of backstop rules found in the provided text."
+        },
+        "management_adjustments": {
+          "label": "Management adjustments",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "Post-model adjustments are mentioned but not detailed as part of management adjustments."
+        },
+        "economic_uncertainty_by_stage": {
+          "label": "Economic uncertainty by stage",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "Economic uncertainty is discussed but not explicitly broken down by stage."
+        },
+        "climate_overlay": {
+          "label": "Climate overlay",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "Climate transition policies are mentioned as potentially affecting credit risk but no specific climate overlay is detailed."
+        },
+        "model_building_blocks": {
+          "label": "Model building blocks",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "No explicit disclosure of model building blocks found."
+        }
+      },
+      "notes": [
+        {
+          "subsection": "Risk and capital management",
+          "disclosure_status": "EXACT",
+          "confidence": "HIGH",
+          "note": "The credit profile remained stable, and the group has yet to see signs of financial stress materially affecting customers' ability to repay."
+        },
+        {
+          "subsection": "IFRS 9 models",
+          "disclosure_status": "EXACT",
+          "confidence": "HIGH",
+          "note": "IFRS 9 models provide PD, EAD, and LGD for the purpose of calculating expected credit loss (ECL)."
+        }
+      ],
+      "extraction_warnings": [
+        "Gross exposure: value 23961.0 was not found verbatim on cited page 42; review citation.",
+        "Gross exposure: value 226.0 was not found verbatim on cited page 42; review citation."
+      ]
+    },
+    {
+      "firm_name": "Santander UK plc",
+      "business_model": "",
+      "portfolio_comparability": "",
+      "source_pdf": "SantanderUKplc2025AnnualReport.pdf",
+      "parser_used": "pymupdf",
+      "core_ecl_coverage": {
+        "gross_customer_receivables": {
+          "label": "Gross customer receivables",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "No information available"
+        },
+        "net_receivables_before_ecl": {
+          "label": "Net receivables before ECL",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "No information available"
+        },
+        "ecl_allowance": {
+          "label": "ECL allowance",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "No information available"
+        },
+        "net_after_ecl": {
+          "label": "Net after ECL",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "No information available"
+        },
+        "derived_coverage_ratio": {
+          "label": "Derived coverage ratio",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "No information available"
+        },
+        "notes": [
+          "No information available"
+        ]
+      },
+      "staging_table": [],
+      "impairment_movement_table": [],
+      "model_design_details": {
+        "framework_design": {
+          "label": "Framework design",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": 53,
+            "table_or_section": "Risk review",
+            "quote": "We use a number of key metrics to measure and control credit risk, as follows:"
+          },
+          "disclosure_status": "PROXY",
+          "confidence": "MEDIUM",
+          "note": "The company uses a number of key metrics to measure and control credit risk."
+        },
+        "number_of_scenarios": {
+          "label": "Number of scenarios",
+          "value": 4.0,
+          "unit": "",
+          "source": {
+            "page": 53,
+            "table_or_section": "Risk review",
+            "quote": "For all our portfolios, we use forward-looking economic scenarios. Our scenarios consist of a central base case, one upside scenario and two downside scenarios."
+          },
+          "disclosure_status": "EXACT",
+          "confidence": "HIGH",
+          "note": "The company uses 4 economic scenarios."
+        },
+        "scenario_names": {
+          "label": "Scenario names",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": 53,
+            "table_or_section": "Risk review",
+            "quote": "For all our portfolios, we use forward-looking economic scenarios. Our scenarios consist of a central base case, one upside scenario and two downside scenarios."
+          },
+          "disclosure_status": "PROXY",
+          "confidence": "MEDIUM",
+          "note": "The company uses a central base case, one upside scenario, and two downside scenarios."
+        },
+        "scenario_weights": {
+          "label": "Scenario weights",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": 53,
+            "table_or_section": "Risk review",
+            "quote": "We use these scenarios to reflect a wide range of possible outcomes for the UK economy."
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "No information available"
+        },
+        "sicr_stage2_design": {
+          "label": "SICR Stage 2 design",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": 53,
+            "table_or_section": "Risk review",
+            "quote": "We assess each facility’s credit risk profile to determine which Stage to allocate them to, and we monitor where there is a SICR and transfers between the Stages, including monitoring of coverage ratios for each Stage."
+          },
+          "disclosure_status": "PROXY",
+          "confidence": "MEDIUM",
+          "note": "The company monitors SICR and transfers between stages."
+        },
+        "backstop_rules": {
+          "label": "Backstop rules",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "No information available"
+        },
+        "management_adjustments": {
+          "label": "Management adjustments",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": 53,
+            "table_or_section": "Risk review",
+            "quote": "In some cases, we need to apply Judgemental Adjustments (JAs) to our model outputs."
+          },
+          "disclosure_status": "PROXY",
+          "confidence": "MEDIUM",
+          "note": "The company applies judgemental adjustments to model outputs."
+        },
+        "economic_uncertainty_by_stage": {
+          "label": "Economic uncertainty by stage",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "No information available"
+        },
+        "climate_overlay": {
+          "label": "Climate overlay",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": 53,
+            "table_or_section": "Risk review",
+            "quote": "In 2025, we also considered any likely impact from climate risk on our forecasting approach and concluded that no adjustment to the multiple economic scenarios for climate risk was required."
+          },
+          "disclosure_status": "PROXY",
+          "confidence": "MEDIUM",
+          "note": "The company considered climate risk but made no adjustments."
+        },
+        "model_building_blocks": {
+          "label": "Model building blocks",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "No information available"
+        }
+      },
+      "notes": [
+        {
+          "subsection": "Risk review",
+          "disclosure_status": "EXACT",
+          "confidence": "HIGH",
+          "note": "The company uses a number of key metrics to measure and control credit risk."
+        },
+        {
+          "subsection": "Risk review",
+          "disclosure_status": "PROXY",
+          "confidence": "MEDIUM",
+          "note": "The company monitors SICR and transfers between stages."
+        },
+        {
+          "subsection": "Risk review",
+          "disclosure_status": "PROXY",
+          "confidence": "MEDIUM",
+          "note": "The company applies judgemental adjustments to model outputs."
+        },
+        {
+          "subsection": "Risk review",
+          "disclosure_status": "PROXY",
+          "confidence": "MEDIUM",
+          "note": "The company considered climate risk but made no adjustments."
+        }
+      ],
+      "extraction_warnings": []
+    },
+    {
+      "firm_name": "NEXT",
+      "business_model": "Retail",
+      "portfolio_comparability": "NOT DISCLOSED",
+      "source_pdf": "nextplc-annual-report-and-accounts-jan-2024.pdf",
+      "parser_used": "pymupdf",
+      "core_ecl_coverage": {
+        "gross_customer_receivables": {
+          "label": "Gross customer receivables",
+          "value": 1550.7,
+          "unit": "GBP million",
+          "source": {
+            "page": 219,
+            "table_or_section": "14. Customer and Other Receivables",
+            "quote": "Gross customer receivables"
+          },
+          "disclosure_status": "EXACT",
+          "confidence": "HIGH",
+          "note": ""
+        },
+        "net_receivables_before_ecl": {
+          "label": "Net customer receivables",
+          "value": 1477.8,
+          "unit": "GBP million",
+          "source": {
+            "page": 219,
+            "table_or_section": "14. Customer and Other Receivables",
+            "quote": "Net customer receivables"
+          },
+          "disclosure_status": "EXACT",
+          "confidence": "HIGH",
+          "note": ""
+        },
+        "ecl_allowance": {
+          "label": "Allowance for expected credit losses",
+          "value": 207.4,
+          "unit": "GBP million",
+          "source": {
+            "page": 219,
+            "table_or_section": "14. Customer and Other Receivables",
+            "quote": "Less: allowance for expected credit losses"
+          },
+          "disclosure_status": "EXACT",
+          "confidence": "HIGH",
+          "note": ""
+        },
+        "net_after_ecl": {
+          "label": "Net customer receivables after ECL",
+          "value": 1270.4,
+          "unit": "GBP million",
+          "source": {
+            "page": 219,
+            "table_or_section": "14. Customer and Other Receivables",
+            "quote": "Net customer receivables after ECL"
+          },
+          "disclosure_status": "EXACT",
+          "confidence": "HIGH",
+          "note": ""
+        },
+        "derived_coverage_ratio": {
+          "label": "Derived coverage ratio",
+          "value": 13.3,
+          "unit": "%",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "DERIVED",
+          "confidence": "HIGH",
+          "note": "Calculated as ECL allowance / Gross customer receivables"
+        },
+        "notes": [
+          "The ECL allowance includes an amount of GBP 25.1m related to customers who have shown recent indicators of distress and are considered to be at higher risk of default.",
+          "The ECL allowance also includes an amount of GBP 20m related to the downgrading of the underlying base to the pre-COVID arrears and indebtedness profile."
+        ]
+      },
+      "staging_table": [],
+      "impairment_movement_table": [],
+      "model_design_details": {
+        "framework_design": {
+          "label": "Framework design",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The framework design is not explicitly disclosed in the report."
+        },
+        "number_of_scenarios": {
+          "label": "Number of scenarios",
+          "value": 4.0,
+          "unit": "",
+          "source": {
+            "page": 192,
+            "table_or_section": "Customer and Other Receivables",
+            "quote": "The ECL model applies four macroeconomic scenarios"
+          },
+          "disclosure_status": "EXACT",
+          "confidence": "HIGH",
+          "note": ""
+        },
+        "scenario_names": {
+          "label": "Scenario names",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The scenario names are not explicitly disclosed in the report."
+        },
+        "scenario_weights": {
+          "label": "Scenario weights",
+          "value": "40% base case, 30% upside, 25% downside, 5% extreme",
+          "unit": "",
+          "source": {
+            "page": 192,
+            "table_or_section": "Customer and Other Receivables",
+            "quote": "A 40% weighting is applied to the base case and 30% to the upside scenario, 25% to the downside scenario and 5% to the extreme scenario"
+          },
+          "disclosure_status": "EXACT",
+          "confidence": "HIGH",
+          "note": ""
+        },
+        "sicr_stage2_design": {
+          "label": "SICR Stage 2 design",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The SICR Stage 2 design is not explicitly disclosed in the report."
+        },
+        "backstop_rules": {
+          "label": "Backstop rules",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The backstop rules are not explicitly disclosed in the report."
+        },
+        "management_adjustments": {
+          "label": "Management adjustments",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The management adjustments are not explicitly disclosed in the report."
+        },
+        "economic_uncertainty_by_stage": {
+          "label": "Economic uncertainty by stage",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The economic uncertainty by stage is not explicitly disclosed in the report."
+        },
+        "climate_overlay": {
+          "label": "Climate overlay",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The climate overlay is not explicitly disclosed in the report."
+        },
+        "model_building_blocks": {
+          "label": "Model building blocks",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The model building blocks are not explicitly disclosed in the report."
+        }
+      },
+      "notes": [
+        {
+          "subsection": "Customer and Other Receivables",
+          "disclosure_status": "EXACT",
+          "confidence": "HIGH",
+          "note": "The customer and other receivables are disclosed in the report."
+        },
+        {
+          "subsection": "ECL Model",
+          "disclosure_status": "EXACT",
+          "confidence": "HIGH",
+          "note": "The ECL model is disclosed in the report."
+        }
+      ],
+      "extraction_warnings": []
+    },
+    {
+      "firm_name": "Frasers Group PLC",
+      "business_model": "",
+      "portfolio_comparability": "",
+      "source_pdf": "frasers-annual-report-2025-web.pdf",
+      "parser_used": "pymupdf",
+      "core_ecl_coverage": {
+        "gross_customer_receivables": {
+          "label": "Trade receivables",
+          "value": 254.9,
+          "unit": "GBP million",
+          "source": {
+            "page": 152,
+            "table_or_section": "Credit Customer Receivables",
+            "quote": "Trade receivables with a gross value of £254.9m"
+          },
+          "disclosure_status": "EXACT",
+          "confidence": "HIGH",
+          "note": ""
+        },
+        "net_receivables_before_ecl": {
+          "label": "Net receivables before ECL",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": ""
+        },
+        "ecl_allowance": {
+          "label": "Provision for impairment",
+          "value": 73.2,
+          "unit": "GBP million",
+          "source": {
+            "page": 152,
+            "table_or_section": "Credit Customer Receivables",
+            "quote": "less a provision for impairment of £73.2m"
+          },
+          "disclosure_status": "EXACT",
+          "confidence": "HIGH",
+          "note": ""
+        },
+        "net_after_ecl": {
+          "label": "Net after ECL",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": ""
+        },
+        "derived_coverage_ratio": {
+          "label": "Derived coverage ratio",
+          "value": 28.7,
+          "unit": "%",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "DERIVED",
+          "confidence": "MEDIUM",
+          "note": "Derived from ECL allowance and gross customer receivables"
+        },
+        "notes": [
+          "The Group uses a simplified approach to providing for expected credit losses for trade receivables."
+        ]
+      },
+      "staging_table": [],
+      "impairment_movement_table": [],
+      "model_design_details": {
+        "framework_design": {
+          "label": "ECL model",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The Group uses a probability-weighted estimate of credit losses over the expected life of the financial instrument."
+        },
+        "number_of_scenarios": {
+          "label": "Number of scenarios",
+          "value": 4.0,
+          "unit": "",
+          "source": {
+            "page": 153,
+            "table_or_section": "Macroeconomic scenarios",
+            "quote": "The latest economic scenarios used in the model along with the probably weighting applied to each are summarised as follows:"
+          },
+          "disclosure_status": "EXACT",
+          "confidence": "HIGH",
+          "note": ""
+        },
+        "scenario_names": {
+          "label": "Scenario names",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The scenarios are described as Upside, Baseline, Downside, and Stress."
+        },
+        "scenario_weights": {
+          "label": "Scenario weights",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The probability weightings applied to each scenario are 5% for Upside, 50% for Baseline, 30% for Downside, and 15% for Stress."
+        },
+        "sicr_stage2_design": {
+          "label": "SICR Stage 2 design",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The Group considers a financial asset to have experienced a significant increase in credit risk if it is more than 30 days past due."
+        },
+        "backstop_rules": {
+          "label": "Backstop rules",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": ""
+        },
+        "management_adjustments": {
+          "label": "Management adjustments / PMAs / overlays / JAs",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": ""
+        },
+        "economic_uncertainty_by_stage": {
+          "label": "Economic uncertainty adjustment by stage",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": ""
+        },
+        "climate_overlay": {
+          "label": "Climate overlay / climate model treatment",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": ""
+        },
+        "model_building_blocks": {
+          "label": "Key model building blocks",
+          "value": null,
+          "unit": "",
+          "source": {
+            "page": null,
+            "table_or_section": "",
+            "quote": ""
+          },
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": ""
+        }
+      },
+      "notes": [
+        {
+          "subsection": "Credit risk management",
+          "disclosure_status": "EXACT",
+          "confidence": "HIGH",
+          "note": "The Group has a credit risk management policy in place to manage its exposure to credit risk."
+        },
+        {
+          "subsection": "ECL model",
+          "disclosure_status": "NOT DISCLOSED",
+          "confidence": "LOW",
+          "note": "The Group uses a probability-weighted estimate of credit losses over the expected life of the financial instrument."
+        }
+      ],
+      "extraction_warnings": []
+    }
+  ]
+}

@@ -62,40 +62,25 @@ class BenchmarkPipeline:
         }
 
 
-def build_llm_context(pages, max_chars: int = 16000) -> str:
-    terms = [
-        "expected credit loss", "ecl", "ifrs 9", "stage 1", "stage 2", "stage 3",
-        "loans and advances", "maximum exposure", "loss allowance",
-        "impairment allowance", "gross carrying amount", "trade receivables",
-        "significant increase in credit risk", "management adjustment",
-        "judgemental adjustment", "overlay", "scenario", "write-off",
-        "climate", "30 days past due", "90 days past due",
-        "macroeconomic", "scenario weighting", "scenario weights",
-        "probability weight", "upside", "downside", "baseline", "base case",
-        "post model adjustment", "pma", "economic uncertainty",
-        "watchlist", "forbearance", "probability of default",
-        "loss given default", "exposure at default", "pd", "lgd", "ead",
-        "credit impairment charge", "reconciliation of ecl movement",
-    ]
+def build_llm_context(pages, max_chars: int = 150000) -> str:
+    # Sort pages by page number so the LLM reads them in natural document order
+    sorted_pages = sorted(pages, key=lambda p: p.page)
+    
     chunks: list[str] = []
-    for page in pages:
+    current_length = 0
+    
+    for page in sorted_pages:
         text = page.text.replace("\x00", " ")
-        lowered = text.lower()
-        spans: list[tuple[int, int]] = []
-        for term in terms:
-            start = lowered.find(term)
-            if start >= 0:
-                spans.append((max(0, start - 1200), min(len(text), start + 2600)))
-        if not spans:
-            spans.append((0, min(len(text), 1400)))
-        merged: list[tuple[int, int]] = []
-        for start, end in sorted(spans):
-            if merged and start <= merged[-1][1] + 300:
-                merged[-1] = (merged[-1][0], max(merged[-1][1], end))
-            else:
-                merged.append((start, end))
-        page_chunks = [text[start:end] for start, end in merged[:2]]
-        chunks.append(f"# Page {page.page}\n" + "\n...\n".join(page_chunks))
-        if sum(len(chunk) for chunk in chunks) > max_chars:
+        page_chunk = f"# Page {page.page}\n{text}\n"
+        
+        if current_length + len(page_chunk) > max_chars:
+            # If adding the whole page exceeds max_chars, truncate this page and stop
+            allowed = max_chars - current_length
+            if allowed > 100:
+                chunks.append(page_chunk[:allowed] + "\n...[TRUNCATED]")
             break
-    return "\n\n".join(chunks)[:max_chars]
+            
+        chunks.append(page_chunk)
+        current_length += len(page_chunk)
+        
+    return "\n".join(chunks)
