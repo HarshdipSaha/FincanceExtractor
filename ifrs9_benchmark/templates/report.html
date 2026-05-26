@@ -34,9 +34,11 @@
       <table>
         <tr><th>Metric</th><th>Value</th><th>Status</th><th>Confidence</th><th>Source</th><th>Note</th></tr>
         {% for metric in [firm.core_ecl_coverage.gross_customer_receivables, firm.core_ecl_coverage.net_receivables_before_ecl, firm.core_ecl_coverage.ecl_allowance, firm.core_ecl_coverage.net_after_ecl, firm.core_ecl_coverage.derived_coverage_ratio] %}
+        {% if not metric|is_metric_hidden %}
         <tr>
           <td>{{ metric.label }}</td><td>{{ metric|metric }}</td><td class="status">{{ metric.disclosure_status }}</td><td>{{ metric.confidence }}</td><td>{{ metric|source }}</td><td>{{ metric.note }}</td>
         </tr>
+        {% endif %}
         {% endfor %}
       </table>
       {% for note in firm.core_ecl_coverage.notes %}<p class="meta">{{ note }}</p>{% endfor %}
@@ -79,7 +81,9 @@
       <table>
         <tr><th>Item</th><th>Extracted detail</th><th>Status</th><th>Confidence</th><th>Source</th></tr>
         {% for metric in [firm.model_design_details.framework_design, firm.model_design_details.number_of_scenarios, firm.model_design_details.scenario_names, firm.model_design_details.scenario_weights, firm.model_design_details.sicr_stage2_design, firm.model_design_details.backstop_rules, firm.model_design_details.management_adjustments, firm.model_design_details.economic_uncertainty_by_stage, firm.model_design_details.climate_overlay, firm.model_design_details.model_building_blocks] %}
+        {% if not metric|is_metric_hidden %}
         <tr><td>{{ metric.label }}</td><td>{{ metric.note or metric|metric }}</td><td class="status">{{ metric.disclosure_status }}</td><td>{{ metric.confidence }}</td><td>{{ metric|source }}</td></tr>
+        {% endif %}
         {% endfor %}
       </table>
 
@@ -87,7 +91,9 @@
       <table>
         <tr><th>Subsection</th><th>Status</th><th>Confidence</th><th>Note</th></tr>
         {% for note in firm.notes %}
+        {% if not note|is_note_hidden %}
         <tr><td>{{ note.subsection }}</td><td class="status">{{ note.disclosure_status }}</td><td>{{ note.confidence }}</td><td>{{ note.note }}</td></tr>
+        {% endif %}
         {% else %}
         <tr><td colspan="4">No extra notes provided.</td></tr>
         {% endfor %}
@@ -97,7 +103,13 @@
       <h3>Validation Warnings</h3>
       {% for warning in firm.extraction_warnings %}<p class="warning">{{ warning }}</p>{% endfor %}
       {% endif %}
+      
+      {% if firm.not_disclosed_factors %}
+      <h3>Not Disclosed / N/A Factors</h3>
+      <p><strong>Not Disclosed-</strong> {{ firm.not_disclosed_factors | join(', ') }}</p>
+      {% endif %}
     </section>
+
   {% endfor %}
 </body>
 </html>

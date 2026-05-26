@@ -22,6 +22,9 @@ def render_outputs(report: BenchmarkReport, output_dir: Path) -> dict[str, Path]
     )
     env.filters["metric"] = metric_text
     env.filters["source"] = source_text
+    from .models import is_metric_not_disclosed, is_note_not_disclosed
+    env.filters["is_metric_hidden"] = is_metric_not_disclosed
+    env.filters["is_note_hidden"] = is_note_not_disclosed
     template = env.get_template("report.html")
     html_text = template.render(report=report)
     html_path.write_text(html_text, encoding="utf-8")
@@ -36,9 +39,11 @@ def render_outputs(report: BenchmarkReport, output_dir: Path) -> dict[str, Path]
     return {"json": json_path, "html": html_path, "pdf": pdf_path}
 
 
+from .models import BenchmarkReport, MetricValue, is_metric_not_disclosed
+
 def metric_text(metric: MetricValue) -> str:
-    if metric.value is None:
-        return "Not disclosed"
+    if is_metric_not_disclosed(metric):
+        return "-"
     if isinstance(metric.value, str):
         return metric.value
     number = f"{metric.value:,.2f}".rstrip("0").rstrip(".")
@@ -74,8 +79,15 @@ def _render_pdf_reportlab(report: BenchmarkReport, pdf_path: Path) -> None:
             core.net_after_ecl,
             core.derived_coverage_ratio,
         ]:
-            rows.append([metric.label, metric_text(metric), metric.disclosure_status, source_text(metric)])
+            if not is_metric_not_disclosed(metric):
+                rows.append([metric.label, metric_text(metric), metric.disclosure_status, source_text(metric)])
         table = Table(rows, repeatRows=1)
         table.setStyle(TableStyle([("GRID", (0, 0), (-1, -1), 0.25, colors.grey), ("BACKGROUND", (0, 0), (-1, 0), colors.lightgrey)]))
         story.extend([table, Spacer(1, 12)])
+        
+        factors = firm.not_disclosed_factors
+        if factors:
+            story.append(Paragraph(f"<b>Not Disclosed-</b> {', '.join(factors)}", styles["BodyText"]))
+            story.append(Spacer(1, 12))
+            
     doc.build(story)
