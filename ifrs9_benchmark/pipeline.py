@@ -62,25 +62,78 @@ class BenchmarkPipeline:
         }
 
 
-def build_llm_context(pages, max_chars: int = 150000) -> str:
-    # Sort pages by page number so the LLM reads them in natural document order
+def build_llm_context(pages, max_chars: int = 28000) -> str:
+    """Build LLM context from selected pages.
+    
+    Pages arrive already sorted by page number from select_candidate_pages.
+    We include full text of each page until we approach max_chars, then
+    switch to keyword-snippet mode for remaining pages to still capture
+    model-design paragraphs without blowing token budgets.
+    """
     sorted_pages = sorted(pages, key=lambda p: p.page)
     
-    chunks: list[str] = []
+    # Phase 1: Include full text of the highest-priority pages first
+    full_text_chunks: list[str] = []
+    snippet_pages: list = []
     current_length = 0
     
     for page in sorted_pages:
         text = page.text.replace("\x00", " ")
         page_chunk = f"# Page {page.page}\n{text}\n"
         
-        if current_length + len(page_chunk) > max_chars:
-            # If adding the whole page exceeds max_chars, truncate this page and stop
-            allowed = max_chars - current_length
-            if allowed > 100:
-                chunks.append(page_chunk[:allowed] + "\n...[TRUNCATED]")
+        if current_length + len(page_chunk) <= max_chars * 0.8:
+            full_text_chunks.append(page_chunk)
+            current_length += len(page_chunk)
+        else:
+            snippet_pages.append(page)
+    
+    # Phase 2: For remaining pages, extract keyword-targeted snippets
+    snippet_terms = [
+        "expected credit loss", "ecl", "ifrs 9", "stage 1", "stage 2", "stage 3",
+        "loss allowance", "gross carrying amount", "significant increase in credit risk",
+        "management adjustment", "judgemental adjustment", "overlay", "scenario",
+        "climate", "macroeconomic", "scenario weighting", "scenario weights",
+        "probability weight", "upside", "downside", "baseline", "base case",
+        "post model adjustment", "pma", "economic uncertainty",
+        "probability of default", "loss given default", "exposure at default",
+        "backstop", "write-off", "credit impairment", "model building block",
+        "sicr", "30 days past due", "90 days past due",
+    ]
+    
+    for page in snippet_pages:
+        if current_length >= max_chars:
             break
-            
-        chunks.append(page_chunk)
-        current_length += len(page_chunk)
+        text = page.text.replace("\x00", " ")
+        lowered = text.lower()
+        spans: list[tuple[int, int]] = []
+        for term in snippet_terms:
+            idx = 0
+            while True:
+                pos = lowered.find(term, idx)
+                if pos < 0:
+                    break
+                spans.append((max(0, pos - 600), min(len(text), pos + 1200)))
+                idx = pos + len(term)
+        if not spans:
+            continue
+        # Merge overlapping spans
+        merged: list[tuple[int, int]] = []
+        for start, end in sorted(spans):
+            if merged and start <= merged[-1][1] + 200:
+                merged[-1] = (merged[-1][0], max(merged[-1][1], end))
+            else:
+                merged.append((start, end))
+        snippets = [text[s:e] for s, e in merged]
+        page_chunk = f"# Page {page.page} (snippets)\n" + "\n...\n".join(snippets) + "\n"
         
-    return "\n".join(chunks)
+        if current_length + len(page_chunk) > max_chars:
+            allowed = max_chars - current_length
+            if allowed > 200:
+                full_text_chunks.append(page_chunk[:allowed] + "\n...[TRUNCATED]")
+                current_length += allowed
+            break
+        
+        full_text_chunks.append(page_chunk)
+        current_length += len(page_chunk)
+    
+    return "\n".join(full_text_chunks)
