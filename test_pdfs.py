@@ -7,14 +7,10 @@ def test_pdfs():
     print("Testing 3 PDFs...")
     pdf_dir = Path(".")
     
-    # Selecting 6 PDFs
+    # Selecting 2 PDFs as requested by user
     pdfs_to_test = [
         "Barclays-Bank-UK-PLC-Annual-Report-2025.pdf", 
-        "HSBC annual-report-and-accounts.pdf", 
-        "natwest-annual-report.pdf",
-        "SantanderUKplc2025AnnualReport.pdf",
-        "nextplc-annual-report-and-accounts-jan-2024.pdf",
-        "frasers-annual-report-2025-web.pdf"
+        "natwest-annual-report.pdf"
     ]
     
     pdf_paths = []

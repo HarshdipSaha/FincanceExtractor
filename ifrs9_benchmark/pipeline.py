@@ -2,10 +2,12 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from rank_bm25 import BM25Okapi
+
 from .config import load_local_keys
 from .llm import GroqExtractor
 from .models import BenchmarkReport, FirmReport
-from .parser import PdfParser, select_candidate_pages
+from .parser import PdfParser, select_candidate_pages, ONTOLOGY
 from .reporting import render_outputs
 from .validator import validate_citations
 
@@ -62,78 +64,60 @@ class BenchmarkPipeline:
         }
 
 
-def build_llm_context(pages, max_chars: int = 28000) -> str:
-    """Build LLM context from selected pages.
+def build_llm_context(pages, max_chars: int = 80000) -> str:
+    """Build LLM context using Chunking + BM25 RAG.
     
-    Pages arrive already sorted by page number from select_candidate_pages.
-    We include full text of each page until we approach max_chars, then
-    switch to keyword-snippet mode for remaining pages to still capture
-    model-design paragraphs without blowing token budgets.
+    Splits the parsed Markdown into chunks, then retrieves the most 
+    relevant chunks based on the Ontology map.
     """
-    sorted_pages = sorted(pages, key=lambda p: p.page)
-    
-    # Phase 1: Include full text of the highest-priority pages first
-    full_text_chunks: list[str] = []
-    snippet_pages: list = []
-    current_length = 0
-    
-    for page in sorted_pages:
-        text = page.text.replace("\x00", " ")
-        page_chunk = f"# Page {page.page}\n{text}\n"
-        
-        if current_length + len(page_chunk) <= max_chars * 0.8:
-            full_text_chunks.append(page_chunk)
-            current_length += len(page_chunk)
-        else:
-            snippet_pages.append(page)
-    
-    # Phase 2: For remaining pages, extract keyword-targeted snippets
-    snippet_terms = [
-        "expected credit loss", "ecl", "ifrs 9", "stage 1", "stage 2", "stage 3",
-        "loss allowance", "gross carrying amount", "significant increase in credit risk",
-        "management adjustment", "judgemental adjustment", "overlay", "scenario",
-        "climate", "macroeconomic", "scenario weighting", "scenario weights",
-        "probability weight", "upside", "downside", "baseline", "base case",
-        "post model adjustment", "pma", "economic uncertainty",
-        "probability of default", "loss given default", "exposure at default",
-        "backstop", "write-off", "credit impairment", "model building block",
-        "sicr", "30 days past due", "90 days past due",
-    ]
-    
-    for page in snippet_pages:
-        if current_length >= max_chars:
-            break
-        text = page.text.replace("\x00", " ")
-        lowered = text.lower()
-        spans: list[tuple[int, int]] = []
-        for term in snippet_terms:
-            idx = 0
-            while True:
-                pos = lowered.find(term, idx)
-                if pos < 0:
-                    break
-                spans.append((max(0, pos - 600), min(len(text), pos + 1200)))
-                idx = pos + len(term)
-        if not spans:
-            continue
-        # Merge overlapping spans
-        merged: list[tuple[int, int]] = []
-        for start, end in sorted(spans):
-            if merged and start <= merged[-1][1] + 200:
-                merged[-1] = (merged[-1][0], max(merged[-1][1], end))
+    if not pages:
+        return ""
+
+    # 1. Chunk pages into smaller blocks (e.g. split by markdown headers or double newlines)
+    chunks = []
+    for page in pages:
+        # In markdown from pymupdf4llm, paragraphs and tables are separated by \n\n
+        paragraphs = page.text.split("\n\n")
+        current_chunk = ""
+        for p in paragraphs:
+            # Chunk size around 1500 chars to keep context intact but focused
+            if len(current_chunk) + len(p) > 1500:
+                chunks.append(f"### [Source: Page {page.page}]\n{current_chunk.strip()}")
+                current_chunk = p + "\n\n"
             else:
-                merged.append((start, end))
-        snippets = [text[s:e] for s, e in merged]
-        page_chunk = f"# Page {page.page} (snippets)\n" + "\n...\n".join(snippets) + "\n"
-        
-        if current_length + len(page_chunk) > max_chars:
-            allowed = max_chars - current_length
-            if allowed > 200:
-                full_text_chunks.append(page_chunk[:allowed] + "\n...[TRUNCATED]")
-                current_length += allowed
+                current_chunk += p + "\n\n"
+        if current_chunk.strip():
+            chunks.append(f"### [Source: Page {page.page}]\n{current_chunk.strip()}")
+
+    if not chunks:
+        return ""
+
+    # 2. Setup BM25 index
+    tokenized_chunks = [chunk.lower().split() for chunk in chunks]
+    bm25 = BM25Okapi(tokenized_chunks)
+
+    # 3. Retrieve top chunks for each ontology concept
+    selected_chunks = set()
+    for concept, terms in ONTOLOGY.items():
+        if concept == "priority_tables":
+            continue
+        # Use the synonyms as the query
+        query = " ".join(terms).lower().split()
+        top_k = bm25.get_top_n(query, chunks, n=8)  # Increased from 4 to 8 to capture more qualitative text
+        for chunk in top_k:
+            selected_chunks.add(chunk)
+
+    # Also query for priority table keywords explicitly
+    priority_query = " ".join(ONTOLOGY["priority_tables"]).lower().split()
+    top_priority = bm25.get_top_n(priority_query, chunks, n=12)  # Increased from 6 to 12 for massive tables
+    for chunk in top_priority:
+        selected_chunks.add(chunk)
+
+    # Combine the unique selected chunks
+    final_context = ""
+    for chunk in selected_chunks:
+        if len(final_context) + len(chunk) > max_chars:
             break
-        
-        full_text_chunks.append(page_chunk)
-        current_length += len(page_chunk)
-    
-    return "\n".join(full_text_chunks)
+        final_context += chunk + "\n\n"
+
+    return final_context

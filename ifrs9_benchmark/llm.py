@@ -19,6 +19,7 @@ Map company labels transparently:
 - gross carrying amount, gross exposure, loans and advances to customers, customer loans, trade receivables, and financial assets at amortised cost may be proxies for gross customer receivables.
 - expected credit loss allowance, impairment allowance, loss allowance, and provision may be proxies for ECL allowance.
 - PMA, overlay, management adjustment, judgemental adjustment, economic uncertainty adjustment and JA are related terms.
+- For impairment movement, "income statement charge", "net remeasurement of ECL", or "charge to income statement" should map to charge_release. "Amounts written off" or "write-offs" map to write_offs. "Transfers" or "other movements" map to charge_offs_or_movement.
 Use the report's original units and state them, e.g. GBP million, GBP billion, EUR million.
 Derived coverage ratio = ECL allowance / gross exposure * 100 when both source figures exist.
 If the annual report contains financial disclosures for multiple distinct corporate entities (e.g., Barclays Bank UK Group AND Barclays Bank UK PLC), you MUST extract and return a separate, distinct report object for EACH entity.
@@ -52,6 +53,10 @@ class GroqExtractor:
             prompt["required_entities"] = [
                 "Barclays Bank UK Group",
                 "Barclays Bank UK PLC",
+            ]
+        elif "natwest" in pdf_name.lower():
+            prompt["required_entities"] = [
+                "NatWest Group"
             ]
         data = self._chat_json(prompt)
         if "firms" not in data:
@@ -196,6 +201,12 @@ def _normalize_report_item(item: dict[str, Any]) -> dict[str, Any]:
                 return [_note_from_scalar(child_value) if not isinstance(child_value, dict) else normalize(child_value, path=path) for child_value in value]
             return [str(child_value.get("note", child_value)) if isinstance(child_value, dict) else str(child_value) for child_value in value]
         if isinstance(value, dict):
+            if path == ("notes",):
+                value.setdefault("subsection", "General")
+                value.setdefault("disclosure_status", "PROXY")
+                value.setdefault("confidence", "LOW")
+                if "note" not in value and "text" in value:
+                    value["note"] = str(value.pop("text"))
             return {child_key: normalize(child_value, child_key, path + (child_key,)) for child_key, child_value in value.items()}
         if isinstance(value, list):
             normalized_items = [normalize(child_value, path=path) for child_value in value]
