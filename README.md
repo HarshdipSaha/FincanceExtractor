@@ -19,6 +19,49 @@ A high-performance extraction and benchmarking tool designed to analyze IFRS 9 d
 
 ## Setup
 
+### Prerequisites
+
+- **Python 3.9 or higher** - [Download Python](https://www.python.org/downloads/)
+- Verify installation: `python --version` (Windows) or `python3 --version` (Mac)
+
+---
+
+### For Windows
+
+1. **Clone the repository:**
+   ```powershell
+   git clone https://github.com/HarshdipSaha/FincanceExtractor.git
+   cd FincanceExtractor
+   ```
+
+2. **Install dependencies:**
+   ```powershell
+   python -m pip install --upgrade pip
+   pip install -r requirements.txt
+   ```
+
+3. **Configure API Keys:**
+   
+   Create a `.env` file in the project root with your Groq API key:
+   ```powershell
+   echo GROQ_API_KEY=your_api_key_here > .env
+   ```
+   
+   Or manually create a `.env` file with:
+   ```
+   GROQ_API_KEY=your_actual_groq_api_key
+   ```
+
+4. **Run the application:**
+   ```powershell
+   python app.py
+   ```
+   The application will be available at `http://127.0.0.1:8000`
+
+---
+
+### For macOS
+
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/HarshdipSaha/FincanceExtractor.git
@@ -27,17 +70,35 @@ A high-performance extraction and benchmarking tool designed to analyze IFRS 9 d
 
 2. **Install dependencies:**
    ```bash
-   pip install -r requirements.txt
+   pip3 install --upgrade pip
+   pip3 install -r requirements.txt
    ```
 
 3. **Configure API Keys:**
-   Create a `.env` file or provide a `keys/` directory with your `GROQ_API_KEY`.
+   
+   Create a `.env` file in the project root with your Groq API key:
+   ```bash
+   echo "GROQ_API_KEY=your_api_key_here" > .env
+   ```
+   
+   Or manually create a `.env` file with:
+   ```
+   GROQ_API_KEY=your_actual_groq_api_key
+   ```
 
 4. **Run the application:**
    ```bash
-   python app.py
+   python3 app.py
    ```
-   The application will be available at `http://127.0.0.1:8000`.
+   The application will be available at `http://127.0.0.1:8000`
+
+---
+
+### Getting Your Groq API Key
+
+1. Visit [https://console.groq.com/](https://console.groq.com/)
+2. Sign up and get your free API key
+3. Copy the key and add it to your `.env` file as shown above
 
 ## Usage
 
