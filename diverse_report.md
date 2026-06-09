@@ -1,0 +1,230 @@
+# IFRS 9 Benchmarking Report (Danske Bank vs Lloyds Banking Group vs Alpha Bank)
+
+## Source reports
+
+- **Danske Bank:** https://danskebank.com/-/media/danske-bank-com/file-cloud/2024/2/danske-bank---annual-report-2023.pdf?rev=6d0eedfde5644c54b075199dfd935b1c (2024)
+- **Lloyds Banking Group:** https://www.annualreports.com/HostedData/AnnualReportArchive/L/LSE_LLOY_2023.pdf (2023)
+- **Alpha Bank:** https://www.annualreports.com/HostedData/AnnualReportArchive/a/alpha-bank-sa_2023.pdf (2023)
+
+## 1) Core ECL / Coverage side-by-side
+
+| Metric |Danske Bank | Lloyds Banking Group | Alpha Bank |
+| --- |--- | --- | --- |
+| Gross exposure |32,686.0 | 387,060.0 | 152.0 |
+| ECL allowance |31.0 | 901.0 | n/a |
+| Coverage ratio |0.1% | 0.2% | n/a |
+| Units |n/a | GBP m | n/a |
+| Metric basis |n/a | n/a | n/a |
+| Coverage method |derived | derived | n/a |
+
+## 2) IFRS 9 model design benchmark
+
+| Feature |Danske Bank | Lloyds Banking Group | Alpha Bank |
+| --- |--- | --- | --- |
+| Model structure |3-stage IFRS 9 model; Segmentation logic disclosed | 3-stage IFRS 9 model; Segmentation logic disclosed | 3-stage IFRS 9 model; Segmentation logic disclosed |
+| Scenario design |3 scenarios: Base, Upside, Downside | 4 scenarios: Base, Upside, Downside, Extreme | 2 scenarios: Base, Downside |
+| PD/LGD/EAD + forward-looking |PD disclosed; LGD disclosed; EAD disclosed; Forward-looking variables disclosed | PD disclosed; EAD disclosed; Forward-looking variables disclosed | PD disclosed; LGD disclosed; EAD disclosed; Forward-looking variables disclosed |
+
+## 3) Ageing / Delinquency Analysis
+
+| Company | Not Past Due | 0-60 days | 60-120 days | 120+ days | Total | % 120+ |
+| --- | --- | --- | --- | --- | --- | --- |
+| Danske Bank | - | - | - | - | n/a | n/a |
+| Lloyds Banking Group | - | - | - | - | n/a | n/a |
+| Alpha Bank | - | - | - | - | n/a | n/a |
+
+## 4) Impairment Movement Analysis
+
+| Company | Stage | Opening | Charge | Write-offs | Closing |
+| --- | --- | --- | --- | --- | --- |
+
+## 5) Evidence excerpts
+
+| Item |Danske Bank | Lloyds Banking Group | Alpha Bank |
+| --- |--- | --- | --- |
+| Model structure |page-122: stage 2 and stage 3.; page-122: measurement, such as an assessment of lifetime expected credit losses for loans in stage 1, an investors risk premium, compensation for; page-120: Transferred to stage 1 773 -734 -39 227 -189 -37 152 -145 -6 - | page-227: classified as either Stage 2 or Stage 3 until the credit risk has improved such that it no longer represents a significant increase since; page-227: origination (for a return to Stage 1), or the loan is no longer credit-impaired (for a return to Stage 2).; page-179: Stage 1 (%) 54.7 58.5 | page-162: • Stage 1: Stage 1 includes performing exposures that do not have significant increase in credit risk since initial; page-162: Stage 1 also includes exposures for which credit risk has been improved and the exposure has been; page-164: purchased or originated credit impaired (POCI) financial assets, a loss allowance equal to the lifetime expected credit losses |
+| Scenario design |page-191: scenarios (base case, upside and downside scenarios), including an assessment of the probability for each scenario , and post-model adjustments.; page-191: The main macroeconomic parameters in the base case, upside and downside scenario s entering into the ECL calculation for the forecast horizon across; page-27: The scenario weights were updated • Loan impairments for core business segments amounted to a; page-27: scenario has a probability of 60% (2022: 70%), the upside million). | page-205: The upside, the base case and the downside scenarios are – Independently replicated the multiple economic scenario; page-205: corresponding to an upside, a downside and a severe downside, methodology applied to generate alternative; page-59: applied to the base case, upside and downside scenarios and a 10 per cent weighting to the severe downside.; page-59: The ECL allowance of £4.3 billion (31 December 2022: £5.3 billion) continues to reflect a probability-weighted view of economic sc... | page-189: the AT1 coupon payment made in 2023 of amount € 17,147, attributable to ordinary equity holders of the Bank, by the weighted; page-189: average number of ordinary shares outstanding during the period, excluding the weighted average number of own shares held,; page-163: The Group calculates expected credit losses based on the weighted probability of three scenarios.; page-163: of expected credit losses of loan por tfolios under a baseline and under alternative macroeconomic scenarios an... |
+| Key parameters |page-75: The e xpe c te d c r e dit lo s s is c a lc ula te d f o r a ll individua l f a c ilitie s a s a f unc tio n o f pr o ba bility o f de f a ult ( P D) , e xpo s ur e at default (EAD) and loss given default; page-75: the end of 202 3, the allowance account would increase by DKK 0.3 billion (2022 : DKK 0.3 billion) , if ins tead an inc reas e in the f ac ility’s 12- month PD by; page-117: The expected c r e dit lo s s is c a lc ula te d for a ll individua l f a c ilitie s as a f unc tion o... | page-227: credit risk, the Group uses quantitative tests based on relative and absolute probability of default (PD) movements linked to internal; page-227: estimate using an appropriate probability of default, adjusted to take into account a range of possible future economic scenarios, and; page-45: The Group’s expected credit loss macroeconomic environment, including updates to affordability; page-45: lending controls for forward-looking costs | page-121: Given Default (LGD), Probability of Default (PD) and the - the selection of the significant forward-looking; page-121: Probability of Default –PD, Exposure at Default –; page-163: • Probability of Default (PD): It is an estimate of the probability of a debtor to default over a specific time horizon.; page-163: • Exposure at default (EAD): Exposure at Default is an estimate of the amount of the exposure at the time of the default |
+
+## 6) Extracted disclosed table excerpts
+
+### Danske Bank - Core ECL table
+
+_No disclosed table extracted._
+
+### Danske Bank - Stage table
+
+| Row | Value 1 | Value 2 | Value 3 | Value 4 | Value 5 | Value 6 | Value 7 | Value 8 | Value 9 | Value 10 | Value 11 | Value 12 | Value 13 | Value 14 | Value 15 | Value 16 | Value 17 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ( | D | KK m illio | n s) | S ta g e | 1 | S ta g e | 2 | S ta g e | 3 | To ta l |  |  |  |  |  |  |  |
+| ECL allow anc e | ac c ount as at 1 | January | 2022 | 2, | 733 | 6, | 804 | 12, | 397 | 21, | 935 |  |  |  |  |  |  |
+| Transferred to stage 1 during | the period | 1,144 | -1,062 | -83 | - |  |  |  |  |  |  |  |  |  |  |  |  |
+| Transferred to stag e 2 during | the period | -405 | 834 | -428 | - |  |  |  |  |  |  |  |  |  |  |  |  |
+| Transferred to stage 3 during | the period | -26 | -617 | 642 | - |  |  |  |  |  |  |  |  |  |  |  |  |
+| ECL on | new assets | 630 | 1,643 | 844 | 3,116 |  |  |  |  |  |  |  |  |  |  |  |  |
+| ECL on | assets derecognised | -870 | -1,487 | -3,971 | -6,329 |  |  |  |  |  |  |  |  |  |  |  |  |
+| Impac t | of | net remeasurement of | ECL ( inc l. c hang es in | m o de ls ) | 120 | 2,101 | 1,032 | 3,253 |  |  |  |  |  |  |  |  |  |
+| W r ite-of f s debited to | the allow anc e ac c ount | - | -2 | -2,195 | -2,198 |  |  |  |  |  |  |  |  |  |  |  |  |
+| Foreig n exc hang e adjustments | -51 | -107 | -15 | -173 |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| Other changes | -1 | - 26 | 27 | 1 |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| ECL allowance account as at 31 D ecember 2022 | 3, | 273 | 8, | 082 | 8, | 251 | 19, | 605 |  |  |  |  |  |  |  |  |  |
+| ECL allow anc e | ac c ount as at 1 | January 2023 | 3,273 | 8,082 | 8,251 | 19,605 |  |  |  |  |  |  |  |  |  |  |  |
+| Transferred to stage 1 during | the period | 2,406 | -2,274 | -132 | - |  |  |  |  |  |  |  |  |  |  |  |  |
+| Transferred to stage 2 during | the period | -211 | 668 | -457 | - |  |  |  |  |  |  |  |  |  |  |  |  |
+| Transferred to stage 3 during the period | -22 | -505 | 527 | - |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| ECL on | new assets | 601 | 1,249 | 607 | 2,457 |  |  |  |  |  |  |  |  |  |  |  |  |
+| ECL on | assets derecognised | -513 | -1,142 | -936 | -2,591 |  |  |  |  |  |  |  |  |  |  |  |  |
+| Impact | of net remeasurement of ECL | ( inc l. c hang es in | models) | -1,923 | 1,393 | 1,579 | 1,048 |  |  |  |  |  |  |  |  |  |  |
+| W r ite-o f | f | s | de bite d to | the allow anc e ac c ount | -5 | - | -364 | -370 |  |  |  |  |  |  |  |  |  |
+| Other changes | 5 | -7 | 12 | 10 |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| ECL allowance account as at 31 D ecember 2023 | 3, | 592 | 7, | 486 | 9, | 062 | 20, | 140 |  |  |  |  |  |  |  |  |  |
+| The | s tag e 3 a llo w a nc e | ac c ount | inc lude s | DKK | 1.9 | billio n | (2022: DKK | 2.5 | billio n) | r e la ting | to | o r ig ina te d | c r e dit | im pa ir e d | f ina nc ia l | assets. | Originated credit |
+
+Source: https://danskebank.com/-/media/danske-bank-com/file-cloud/2024/2/danske-bank---annual-report-2023.pdf?rev=6d0eedfde5644c54b075199dfd935b1c (page-189)
+
+### Danske Bank - Ageing table
+
+| Row | Value 1 | Value 2 | Value 3 | Value 4 | Value 5 | Value 6 | Value 7 | Value 8 | Value 9 | Value 10 | Value 11 | Value 12 | Value 13 | Value 14 | Value 15 | Value 16 | Value 17 | Value 18 | Value 19 | Value 20 | Value 21 | Value 22 | Value 23 | Value 24 | Value 25 | Value 26 | Value 27 | Value 28 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| transferred | from | s ta g e | 1 | to | s ta g e | 2 | based | on observed | increases | in | the | pr o ba bility | of | de f | a ult: |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| • | For | f a c ilitie s | o r ig ina te d | be lo w | 1% | in | P | D: | An | inc r e a s e | in | the | f a c ility’ s | 12- | m o nth | PD | of | at | le a s t | 0.5 | percentage | po ints | and | a | do ubling | of | the | f a c ility’ s |
+| • | For | f a c ilitie s | o r ig ina te d | a b o ve | 1% | in | P | D: | An | inc r e a s e | in | the | f a c ility’ s | 12 | m o nth | PD | of | 2 percentage | po ints | or | a do ubling | of | the | f a c ility’ s | lif e tim e | PD |  |  |
+| In | a dditio n, | f a c ilitie s | tha t | are | more | tha n | 30 | da ys | past | due | are | m o ve d | to s ta g e | 2. | 30 | days | past due | is considered | a backstop. | F ina lly, | c us to m e r s | s | u b je c | t | to |  |  |  |
+
+Source: https://danskebank.com/-/media/danske-bank-com/file-cloud/2024/2/danske-bank---annual-report-2023.pdf?rev=6d0eedfde5644c54b075199dfd935b1c (page-117)
+
+### Danske Bank - Impairment movement table
+
+| Row | Value 1 | Value 2 | Value 3 | Value 4 | Value 5 | Value 6 |
+| --- | --- | --- | --- | --- | --- | --- |
+| Unr e a lis e d | inc o m e | f r o m | ho lding s | in a s s o c ia te s | 110 | -8 |
+| Impairment c ha r g e | o n g o o dw ill | - | 1,627 |  |  |  |
+| Loan impairment c harg es | 262 | 1,502 |  |  |  |  |
+
+Source: https://danskebank.com/-/media/danske-bank-com/file-cloud/2024/2/danske-bank---annual-report-2023.pdf?rev=6d0eedfde5644c54b075199dfd935b1c (page-151)
+
+### Lloyds Banking Group - Core ECL table
+
+| Row | Value 1 | Value 2 | Value 3 | Value 4 | Value 5 | Value 6 |
+| --- | --- | --- | --- | --- | --- | --- |
+| UK mortgages | 258,362 | 41,911 | 7,300 | 307,573 | 13.6 | 2.4 |
+| Credit cards | 12,625 | 2,908 | 284 | 15,817 | 18.4 | 1.8 |
+| Loans and overdrafts | 7,103 | 1,187 | 196 | 8,486 | 14.0 | 2.3 |
+| UK Motor Finance | 13,541 | 2,027 | 112 | 15,680 | 12.9 | 0.7 |
+| Other | 15,898 | 525 | 144 | 16,567 | 3.2 | 0.9 |
+| Retail1 | 307,529 | 48,558 | 8,036 | 364,123 | 13.3 | 2.2 |
+| Small and Medium Businesses | 27,525 | 4,458 | 1,530 | 33,513 | 13.3 | 4.6 |
+| Corporate and Institutional Banking | 52,049 | 3,529 | 538 | 56,116 | 6.3 | 1.0 |
+| Commercial Banking | 79,574 | 7,987 | 2,068 | 89,629 | 8.9 | 2.3 |
+| Equity Investments and Central Items2 | (43) | – | 6 | (37) |  |  |
+| Total gross lending | 387,060 | 56,545 | 10,110 | 453,715 | 12.5 | 2.2 |
+| ECL allowance on drawn balances | (901) | (1,532) | (1,537) | (3,970) |  |  |
+| Net balance sheet carrying value | 386,159 | 55,013 | 8,573 | 449,745 |  |  |
+| UK mortgages | 170 | 441 | 757 | 1,368 |  |  |
+| Credit cards | 234 | 446 | 130 | 810 |  |  |
+| Loans and overdrafts | 153 | 244 | 118 | 515 |  |  |
+| UK Motor Finance3 | 188 | 91 | 63 | 342 |  |  |
+| Other | 20 | 21 | 47 | 88 |  |  |
+| Retail1 | 765 | 1,243 | 1,115 | 3,123 |  |  |
+| Small and Medium Businesses | 140 | 231 | 167 | 538 |  |  |
+| Corporate and Institutional Banking | 156 | 218 | 253 | 627 |  |  |
+| Commercial Banking | 296 | 449 | 420 | 1,165 |  |  |
+| Equity Investments and Central Items | – | – | 4 | 4 |  |  |
+| Total | 1,061 | 1,692 | 1,539 | 4,292 |  |  |
+| UK mortgages | 0.1 | 1.1 | 10.4 | 0.4 |  |  |
+| Credit cards | 1.9 | 15.3 | 49.4 | 5.1 |  |  |
+| Loans and overdrafts | 2.2 | 20.6 | 65.6 | 6.1 |  |  |
+| UK Motor Finance | 1.4 | 4.5 | 56.3 | 2.2 |  |  |
+| Other | 0.1 | 4.0 | 32.6 | 0.5 |  |  |
+| Retail1 | 0.2 | 2.6 | 13.9 | 0.9 |  |  |
+| Small and Medium Businesses | 0.5 | 5.2 | 13.9 | 1.6 |  |  |
+| Corporate and Institutional Banking | 0.3 | 6.2 | 47.0 | 1.1 |  |  |
+| Commercial Banking | 0.4 | 5.6 | 24.1 | 1.3 |  |  |
+| Total | 0.3 | 3.0 | 15.8 | 0.9 |  |  |
+
+Source: https://www.annualreports.com/HostedData/AnnualReportArchive/L/LSE_LLOY_2023.pdf (page-172)
+
+### Lloyds Banking Group - Stage table
+
+| Row | Value 1 | Value 2 |
+| --- | --- | --- |
+| Interest-only balances (£m) | 37,278 | 42,697 |
+| Stage 1 (%) | 54.7 | 58.5 |
+| Stage 2 (%) | 27.6 | 25.3 |
+| Stage 3 (%) | 5.6 | 3.7 |
+| Purchased or originated credit-impaired (%) | 12.1 | 12.6 |
+| Average loan to value (%) | 36.9 | 35.5 |
+| Due | 1,982 | 1,931 |
+| Within 1 year | 1,129 | 1,453 |
+| 2 to 5 years | 8,803 | 8,832 |
+| 6 to 10 years | 13,918 | 16,726 |
+| Greater than 10 years | 11,446 | 13,755 |
+| Past term interest-only balances1 (£m) | 1,925 | 1,906 |
+| Stage 1 (%) | 0.2 | 0.2 |
+| Stage 2 (%) | 9.3 | 11.9 |
+| Stage 3 (%) | 52.2 | 45.6 |
+| Purchased or originated credit-impaired (%) | 38.4 | 42.3 |
+| Average loan to value (%) | 35.2 | 33.2 |
+| Negative equity (%) | 2.6 | 2.0 |
+
+Source: https://www.annualreports.com/HostedData/AnnualReportArchive/L/LSE_LLOY_2023.pdf (page-179)
+
+### Alpha Bank - Core ECL table
+
+_No disclosed table extracted._
+
+### Alpha Bank - Stage table
+
+| Row | Value 1 | Value 2 |
+| --- | --- | --- |
+| Placements with other banks | 844,484 | 1,044,577 |
+| Guarantees for derivative securities coverage and repurchase agreements (Note 45) | 648,450 | 356,764 |
+| Loans to credit institutions | 36,965 | 36,965 |
+| Less: Allowance for expected credit losses (Note 44.1) | (70,096) | (70,171) |
+| Total | 1,722,471 | 1,368,135 |
+
+Source: https://www.annualreports.com/HostedData/AnnualReportArchive/a/alpha-bank-sa_2023.pdf (page-190)
+
+### Alpha Bank - Impairment movement table
+
+| Row | Value 1 | Value 2 | Value 3 | Value 4 |
+| --- | --- | --- | --- | --- |
+| Acquisition Cost | 526,301 | 7,826 | 534,127 |  |
+| Accumulated depreciation and impairment losses | (106,235) | (2,460) | (108,695) |  |
+| Net book value 1.1.2022 | 420,067 | 5,366 | 425,432 |  |
+| Acquisition Cost | 526,301 | 7,826 | 534,127 |  |
+| Additions from expenses capitalization | 700 | 700 |  |  |
+| Additions from companies consolidated for the first time in the year | 2,123 | 2,123 |  |  |
+| Reclassification from “Property plant and equipment” | 1,569 | 1,569 |  |  |
+| Reclassification to "Assets held for sale" | (185,170) | (185,170) |  |  |
+| Foreign Exchange differences | 90 | 90 |  |  |
+| Disposals / Write-offs / Terminations | (21,770) | 4 | (21,766) |  |
+| Depreciation charge for the year | (7,950) | (718) | (8,668) |  |
+| (Impairment) / Reversal of Impairment for the year | (7,021) | (7,021) |  |  |
+| Net book value 31.12.2022 | 240,251 | 4,652 | 244,903 |  |
+| Acquisition Cost | 271,501 | 7,662 | 279,163 |  |
+| Accumulated depreciation and impairment losses | (31,250) | (3,010) | (34,260) |  |
+| Net book value 1.1.2023 | 240,251 | 4,652 | 244,903 |  |
+| Additions | 6,743 | 6,743 |  |  |
+| Additions from expenses capitalization | 346 | 346 |  |  |
+| Reclassification from/(to) “Property plant and equipment” | 6,275 | 6,275 |  |  |
+| Reclassification from/(to) “Other assets ” | 62,337 | 62,337 |  |  |
+| Reclassification from/(to) "Assets held for sale" | 5,058 | 5,058 |  |  |
+| Disposals / Write-offs / Terminations | (10,889) | (1,045) | (11,934) |  |
+| Sale of subsidiary | (1,357) | (1,357) |  |  |
+| Depreciation charge for the year | (4,324) | (755) | (5,079) |  |
+| (Impairment) / Reversal of Impairment for the year | (5,876) | (5,876) |  |  |
+| Foreign Exchange differences | (211) | (211) |  |  |
+| Net book value | 31.12.2023 | 298,353 | 2,852 | 301,205 |
+| Acquisition Cost | 333,827 | 6,617 | 340,444 |  |
+| Accumulated depreciation and impairment losses | (35,474) | (3,765) | (39,239) |  |
+
+Source: https://www.annualreports.com/HostedData/AnnualReportArchive/a/alpha-bank-sa_2023.pdf (page-210)
+
+## 7) Analyst notes
+
+- **Danske Bank:** Company type inferred as Investment / markets bank.
+- **Danske Bank:** No single reliable core ECL table was identified; values may not be directly comparable.
+- **Lloyds Banking Group:** Company type inferred as Investment / markets bank.
+- **Alpha Bank:** Coverage ratio unavailable from extracted data.
+- **Alpha Bank:** No single reliable core ECL table was identified; values may not be directly comparable.

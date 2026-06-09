@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ifrs9-benchmark"
+version = "0.1.0"
+description = "IFRS 9 benchmarking extractor for Next plc vs Frasers Group"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "requests>=2.32.0",
+  "beautifulsoup4>=4.12.0",
+  "pypdf>=4.2.0"
+]
+
+[project.scripts]
+ifrs9-benchmark = "ifrs9_benchmark.cli:main"
+
+[tool.setuptools]
+packages = ["ifrs9_benchmark"]

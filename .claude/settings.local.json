@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.nextplc.co.uk)",
+      "WebFetch(domain:www.frasergroup.co.uk)",
+      "WebFetch(domain:financialreports.eu)",
+      "WebFetch(domain:www.hl.co.uk)",
+      "Bash(python -m ifrs9_benchmark --next-url \"https://financialreports.eu/filings/next-plc/annual-report/2025/5828452/\" --frasers-url \"https://financialreports.eu/filings/frasers-group-plc/annual-report/2025/7773263/\")",
+      "Bash(python -m ifrs9_benchmark --next-url \"https://www.nextplc.co.uk/~/media/Files/N/next-plc-v4/about-next/annual-report-and-accounts-jan-2026.pdf\" --frasers-url \"https://frasers-cms.netlify.app/assets/FrasersGroup-HY26-Results-Announcement.pdf\")",
+      "WebFetch(domain:quartr.com)",
+      "Bash(curl -s \"https://www.frasergroup.co.uk/investors/reports-and-presentations\")",
+      "Bash(curl -s \"https://www.frasergroup.co.uk/investors\")",
+      "Bash(curl -sI \"https://www.frasergroup.co.uk/investors/reports-and-presentations\")",
+      "WebFetch(domain:frasers-cms.netlify.app)",
+      "Bash(curl -s \"https://www.google.com/search?q=site:frasergroup.co.uk+annual+report+2025+pdf\")",
+      "Bash(curl -s \"https://www.google.com/search?q=Frasers+Group+FY25+annual+report+PDF\")",
+      "Bash(curl -s \"https://www.companypages.co.uk/company/frasers-group-plc/financial-reports\")",
+      "Bash(curl -s \"https://search.google.com/search?q=Frasers+Group+annual+report+2025\")",
+      "Bash(curl -s \"https://www.google.com/search?q=Frasers+Group+FY25+annual+report+download\" -H \"User-Agent: Mozilla/5.0\")",
+      "Bash(curl -s \"https://www.google.com/search?q=Frasers+Group+plc+annual+report+2025\")",
+      "Bash(curl -s \"https://financialreports.eu/companies/frasers-group-plc/\")",
+      "Bash(git init *)",
+      "Bash(git remote *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(python *)"
+    ]
+  }
+}
