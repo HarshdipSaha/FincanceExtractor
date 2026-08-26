@@ -106,3 +106,48 @@ A high-performance extraction and benchmarking tool designed to analyze IFRS 9 d
 2. Select the preferred parser and LLM model.
 3. Wait for the extraction pipeline to complete.
 4. Download the generated benchmarking report in your preferred format.
+
+## How it works
+
+The web path (`app.py` -> `ifrs9_benchmark/pipeline.py`) runs one `BenchmarkPipeline` per upload batch:
+
+```mermaid
+flowchart LR
+  UP["Upload PDFs (static/index.html, POST /api/reports)"] --> PARSE["parser.PdfParser: per-page text via pdfplumber, page scored by ONTOLOGY keywords"]
+  PARSE --> SELECT["select_candidate_pages (max_pages_per_pdf, default 80)"]
+  SELECT --> RAG["pipeline.build_llm_context: chunk pages, BM25 retrieval against the IFRS 9 ontology"]
+  RAG --> LLM["llm.GroqExtractor: Groq chat completion (default llama-3.3-70b-versatile), JSON output, key rotation"]
+  LLM --> MODEL["models.FirmReport (pydantic): core ECL table, staging, movements, model design, notes"]
+  MODEL --> VAL["validator.validate_citations: keep only numbers visible on the cited pages"]
+  VAL --> REPORT["reporting.render_outputs: JSON, HTML (Jinja2 template), PDF (reportlab)"]
+  REPORT --> DL["GET /api/reports/{run_id}/json, html, pdf"]
+```
+
+`GROQ_API_KEY` is read from `.env` by `config.py`; several keys can be provided and the extractor rotates between them on rate-limit errors.
+
+## Project structure (detailed)
+
+```
+app.py                      FastAPI app: /, /api/reports, /api/reports/{run_id}/{json,html,pdf}, /api/health
+ifrs9_benchmark/
+  pipeline.py               BenchmarkPipeline (parse -> select -> BM25 context -> LLM -> validate -> render)
+  parser.py                 PdfParser (pdfplumber), ONTOLOGY keyword map, page scoring and selection
+  llm.py                    GroqExtractor, JSON normalisation, key rotation
+  models.py                 pydantic models (FirmReport, BenchmarkReport, MetricValue, ...)
+  validator.py              citation check of extracted numbers against page text
+  reporting.py              JSON / HTML / PDF rendering; templates/report.html
+  config.py                 .env loading, Groq key list
+  cli.py, extract.py, fetch.py, parse.py, report.py   earlier URL-driven CLI path (python -m ifrs9_benchmark)
+static/                     index.html, app.js, styles.css
+tests/test_extract.py       unit tests for the extract module
+ARCHITECTURE.md, CONCEPT.md non-technical walkthrough of the design
+*.pdf, *_report.*           sample annual reports and generated reports kept in the repo
+```
+
+## Status and limitations
+
+- Two code paths coexist: the FastAPI + Groq pipeline described above, and an older CLI (`cli.py`, `extract.py`, `fetch.py`, `report.py`) that discovers filings by URL and extracts with regex/table heuristics. `pyproject.toml` still describes the older scope.
+- `parser.py` imports `pdfplumber`, which is not listed in `requirements.txt` (which lists `pymupdf` / `pymupdf4llm` instead); install it separately if the import fails.
+- Extraction quality depends on the LLM; the citation validator drops numbers it cannot find on the cited pages but does not guarantee completeness.
+- A `.venv/` directory and several large sample PDFs are committed; a fresh install via `requirements.txt` is recommended.
+- Tests cover only the extract module (`tests/test_extract.py`).
